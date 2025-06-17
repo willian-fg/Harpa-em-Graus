@@ -1,0 +1,32 @@
+
+body {
+  font-family: sans-serif;
+  background: #fafafa;
+  margin: 0;
+  padding: 0;
+}
+header {
+  background: #004d40;
+  color: white;
+  text-align: center;
+  padding: 1em;
+}
+main {
+  padding: 1em;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+li {
+  margin: 1em 0;
+}
+a {
+  background: white;
+  padding: 1em;
+  display: block;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #004d40;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
