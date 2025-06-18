@@ -4,20 +4,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="/style.css" />
   <title>Chuvas de Graça</title>
 </head>
 <body>
   <header>
-  <h1>Chuvas de Graça</h1>
+  <h1>1 - Chuvas de Graça</h1>
   <input list="sugestoes" id="busca-cifra" placeholder="Buscar outra música..." onkeypress="buscarCifra(event)" />
   <datalist id="sugestoes"></datalist>
 </header>
+ <div id="scroll-bar">
+  <button id="scroll-btn" onclick="toggleScroll()">Iniciar rolagem</button>
+  <label for="speed">Velocidade:</label>
+  <input type="range" id="speed" min="10" max="100" value="30" />
+ </div>
+
 
 
   <main>
    <pre>
-1°         5°         1 
+         5°         1 
 <u>De</u>us prome<u>teu</u>, com cer<u>te</u>za
 Chuvas de graça mandar
 Ele nos dá fortaleza
@@ -87,6 +93,47 @@ Chuvas do Consolador
     }
   }
 </script>
+<script>
+  let scrollInterval = null;
+  let isScrolling = false;
+
+  function toggleScroll() {
+    const btn = document.getElementById("scroll-btn");
+    const speed = parseInt(document.getElementById("speed").value);
+
+    if (!isScrolling) {
+      scrollInterval = setInterval(() => {
+        window.scrollBy({ top: 1, behavior: "smooth" });
+      }, speed);
+      btn.textContent = "Parar rolagem";
+      isScrolling = true;
+    } else {
+      clearInterval(scrollInterval);
+      btn.textContent = "Iniciar rolagem";
+      isScrolling = false;
+    }
+  }
+
+  document.getElementById("speed").addEventListener("input", () => {
+    if (isScrolling) {
+      toggleScroll();
+      toggleScroll();
+    }
+  });
+</script>
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const pre = document.querySelector("pre");
+    const texto = pre.innerHTML;
+
+    // Regex para detectar graus como: 1°, 1°m, 4°7, 5°9, 2°m7 etc.
+    const formatado = texto.replace(/(?<!\w)(\d°m?(?:7|9)?)(?!\w)/g, '<span class="nota">$1</span>');
+
+    pre.innerHTML = formatado;
+  });
+</script>
+
+
 
 </body>
 </html>
