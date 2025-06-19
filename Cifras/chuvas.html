@@ -9,17 +9,10 @@
 </head>
 <body>
   <header>
-  <h1>Chuvas de Graça</h1>
-  <input list="sugestoes" id="busca-cifra" placeholder="Buscar outra música..." onkeypress="buscarCifra(event)" />
-  <datalist id="sugestoes"></datalist>
-</header>
-<div id="scroll-bar">
-  <button id="scroll-btn" onclick="toggleScroll()">Iniciar rolagem</button>
-  <label for="speed">Velocidade:</label>
-  <input type="range" id="speed" min="10" max="100" value="30" />
-</div>
-
-
+    <h1>Chuvas de Graça</h1>
+    <input list="sugestoes" id="busca-cifra" placeholder="Buscar outra música..." onkeypress="buscarCifra(event)" />
+    <datalist id="sugestoes"></datalist>
+  </header>
 
   <main>
    <pre>
@@ -134,6 +127,10 @@ Chuvas do Consolador
 </script>
 
 
-
+<div id="scroll-bar">
+  <button id="scroll-btn" onclick="toggleScroll()">Iniciar rolagem</button>
+  <label for="speed">Velocidade:</label>
+  <input type="range" id="speed" min="10" max="100" value="30" />
+</div>
 </body>
 </html>

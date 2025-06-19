@@ -55,19 +55,22 @@ pre {
 
 #scroll-bar {
   position: fixed;
-  top: 0;
+  bottom: 0;
   left: 0;
   right: 0;
-  background: white;
-  border-bottom: 2px solid #004d40;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(6px);
+  border-top: 1px solid #ccc;
   padding: 0.5em 1em;
   display: flex;
   gap: 1em;
   align-items: center;
+  justify-content: center;
   z-index: 999;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
   flex-wrap: wrap;
 }
+
 
 body {
   padding-top: 70px; /* Dá espaço para a barra fixa */
