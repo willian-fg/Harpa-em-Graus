@@ -10,7 +10,10 @@
 <body>
   <header>
     <h1>1 - Chuvas de Graça</h1>
-    <input list="sugestoes" id="busca-cifra" placeholder="Buscar outra música..." onkeypress="buscarCifra(event)" />
+    <div class="search-container">
+  <input type="text" id="search" placeholder="🔍 Buscar música..." oninput="filterSongs()" />
+</div>
+
     <datalist id="sugestoes"></datalist>
   </header>
 

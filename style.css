@@ -110,5 +110,27 @@ body {
   font-weight: bold;
 }
 
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin: 1.5em 0;
+}
+
+#search {
+  width: 90%;
+  max-width: 500px;
+  padding: 0.8em 1em;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 999px;
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+#search:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+}
 
 
