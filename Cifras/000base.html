@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="../style.css" />
+  <title>1 - Chuvas de Graça</title>
+</head>
+<body>
+  <header>
+    <h1>000 - Cifra</h1>
+
+
+
+             <!----------Search------------>
+
+    <div class="search-container">
+        <input type="text" id="search" placeholder="🔍 Buscar música..." oninput="filterSongs()" />
+    </div>
+
+    <datalist id="sugestoes"></datalist>
+  </header>
+
+
+               <!----------Cifra------------>
+  <main>
+   <pre>
+
+   </pre>
+  </main>
+
+
+
+               <!----------Scroll------------>
+  <div id="scroll-float">
+    <button id="scroll-btn" onclick="toggleScroll()">⏩</button>
+    <input type="range" id="speed" min="10" max="100" value="30" />
+  </div>
+
+
+
+               <!----------Scripts------------>
+<script src="../cifras.js"></script>
+<!-----Script-Busca-->
+<script>
+  // Preenche o datalist com os nomes das músicas
+  window.onload = () => {
+    const lista = document.getElementById("sugestoes");
+    cifras.forEach(cifra => {
+      const opt = document.createElement("option");
+      opt.value = cifra.nome;
+      lista.appendChild(opt);
+    });
+  };
+
+  // Redireciona ao pressionar Enter
+  function buscarCifra(e) {
+    if (e.key !== "Enter") return;
+    const termo = document.getElementById("busca-cifra").value.toLowerCase();
+
+    const resultado = cifras.find(c =>
+      c.nome.toLowerCase().includes(termo)
+    );
+
+    if (resultado) {
+      window.location.href = `../Cifras/${resultado.arquivo}`;
+    } else {
+      alert("Música não encontrada.");
+    }
+  }
+</script>
+<!-----Script-Scroll-->
+<script>
+  let scrollInterval = null;
+  let isScrolling = false;
+
+  function toggleScroll() {
+    const btn = document.getElementById("scroll-btn");
+    const speed = parseInt(document.getElementById("speed").value);
+
+    if (!isScrolling) {
+      scrollInterval = setInterval(() => {
+        window.scrollBy({ top: 1, behavior: "smooth" });
+      }, speed);
+      btn.textContent = "Parar rolagem";
+      isScrolling = true;
+    } else {
+      clearInterval(scrollInterval);
+      btn.textContent = "Iniciar rolagem";
+      isScrolling = false;
+    }
+  }
+
+  document.getElementById("speed").addEventListener("input", () => {
+    if (isScrolling) {
+      toggleScroll();
+      toggleScroll();
+    }
+  });
+</script>
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const pre = document.querySelector("pre");
+    const texto = pre.innerHTML;
+
+    // Regex para detectar graus como: 1°, 1°m, 4°7, 5°9, 2°m7 etc.
+    const formatado = texto.replace(/(?<!\w)(\d°m?(?:7|9)?)(?!\w)/g, '<span class="nota">$1</span>');
+
+    pre.innerHTML = formatado;
+  });
+</script>
+</body>
+</html>
