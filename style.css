@@ -60,44 +60,6 @@ pre {
 
 
 
-#scroll-bar {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(6px);
-  border-top: 1px solid #ccc;
-  padding: 0.5em 1em;
-  display: flex;
-  gap: 1em;
-  align-items: center;
-  justify-content: center;
-  z-index: 999;
-  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
-  flex-wrap: wrap;
-}
-
-
-
-#scroll-btn {
-  background: #004d40;
-  color: white;
-  border: none;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-#scroll-btn:hover {
-  background: #00695c;
-}
-
-#speed {
-  width: 150px;
-}
-
 body {
   font-family: 'Inter', sans-serif;
   line-height: 1.6;
@@ -133,4 +95,40 @@ body {
   box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
 }
 
+
+/* ----------Scroll------------*/
+#scroll-float {
+  position: fixed;
+  bottom: 1.5em;
+  right: 1.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5em;
+  background: white;
+  border-radius: 1em;
+  padding: 0.8em;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 999;
+}
+
+#scroll-btn {
+  background: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 1.5em;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#scroll-btn:hover {
+  background: #3730a3;
+}
+
+#speed {
+  width: 100px;
+}
 
