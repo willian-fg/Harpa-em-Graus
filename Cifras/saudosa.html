@@ -15,11 +15,15 @@
 
              <!----------Search------------>
 
-    <div class="search-container">
-        <input type="text" id="search" placeholder="🔍 Buscar música..." oninput="filterSongs()" />
-    </div>
+<input
+  type="text"
+  id="search"
+  placeholder="🔍 Buscar música..."
+  onkeydown="buscarCifra(event)"
+  list="sugestoes"
+/>
+<datalist id="sugestoes"></datalist>
 
-    <datalist id="sugestoes"></datalist>
   </header>
 
 
@@ -28,30 +32,29 @@
   <pre>
  1°        5°       1°
 <u>Ho</u>! Que sau<u>do</u>sa lem<u>bra</u>nça
-             6°       2°m
+         6°     2°m
 Tenho de <u>ti</u>, ó Si<u>aõ</u>
-                5°
+                   5°
 Terra que eu tanto <u>a</u>-mo
-                1°      5°
+                   1°   5°
 Pois és do meu cora<u>ção</u>
-1°        5°       1°
+1°      5°    1°
 <u>Eu</u> para <u>ti</u> voa<u>rei</u>
-1°7               4° 
+1°7                    4° 
 <u>Quan</u>do o Senhor meu vol<u>tar</u>
-         4°#dim    1°  
+         4°#dim      1°  
 Pois Ele <u>foi</u> para o <u>céu</u>
 5°7                 1°
 <u>E</u> breve vem me bus<u>car</u> 
 
-1°        5°       1°
-<u>Sim</u>, eu <u>por</u>fia<u>rei</u> por
+1°        5°   1°
+<u>Sim</u>, eu <u>por</u>fia<u>rei</u>
          6°m       5°
-essa <u>te</u>rra e a<u>lem</u>
-2°m      5°                    1°    5°
-<u>E</u> lá <u>te</u>rminarei as muitas lutas
-de a<u>quém</u>
-1°        5°        1°       1°7       4°
-<u>Lá</u> está <u>meu</u> bom Se<u>nhor</u>,ao qual eu <u>de</u>sejo <u>ver</u>
+Por essa <u>te</u>rra e a<u>lem</u>
+2°m   5°                  1°        5°
+<u>E</u> lá <u>te</u>rminarei as muitas <u>lu</u>tas de a<u>quém</u>
+1°       5°        1°  1°7         4°
+<u>Lá</u> está <u>meu</u> bom Se<u>nhor</u>,<u>ao</u> qual eu <u>de</u>sejo <u>ver</u>
        4°#dim        1°        3°m   2°7   5° 1°
 Ele é <u>tu</u>do pra <u>mim</u>, e sem <u>E</u>le não <u>pos</u>-<u>so</u> vi<u>ver</u>
 
@@ -67,7 +70,7 @@ Que só se encontra a<u>li</u>
 <u>Os</u> que pro<u>cu</u>ram che<u>gar</u>
 1°7               4°
 <u>Ao</u> teu regaço, ó Si<u>ão</u>
-         4°#dim    1°  
+         4°#dim      1°  
 <u>Li</u>vres serão de pe<u>car</u>
 5°7                 1°
 <u>E</u> de toda a tenta<u>ção</u>
@@ -81,7 +84,7 @@ essa <u>te</u>rra e a<u>lem</u>
 de a<u>quém</u>
 1°        5°        1°       1°7       4°
 <u>Lá</u> está <u>meu</u> bom Se<u>nhor</u>,ao qual eu <u>de</u>sejo <u>ver</u>
-       4°#dim        1°        3°m   2°7   5° 1°
+       4°#dim 1°        3°m   2°7   5° 1°
 Ele é <u>tu</u>do pra <u>mim</u>, e sem <u>E</u>le não <u>pos</u>-<u>so</u> vi<u>ver</u>
 
 1°        5°       1°
@@ -141,20 +144,31 @@ Ele é <u>tu</u>do pra <u>mim</u>, e sem <u>E</u>le não <u>pos</u>-<u>so</u> vi
   };
 
   // Redireciona ao pressionar Enter
-  function buscarCifra(e) {
-    if (e.key !== "Enter") return;
-    const termo = document.getElementById("busca-cifra").value.toLowerCase();
+function buscarCifra(e) {
+  if (e.key !== "Enter") return;
+  const termo = document.getElementById("search").value.toLowerCase();
 
-    const resultado = cifras.find(c =>
-      c.nome.toLowerCase().includes(termo)
-    );
+  const resultado = cifras.find(c =>
+    c.nome.toLowerCase().includes(termo)
+  );
 
-    if (resultado) {
-      window.location.href = `../Cifras/${resultado.arquivo}`;
-    } else {
-      alert("Música não encontrada.");
-    }
+  if (resultado) {
+    window.location.href = `../Cifras/${resultado.arquivo}`;
+  } else {
+    alert("Música não encontrada.");
   }
+}
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const input = document.getElementById("search");
+
+  input.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      buscarCifra(event);
+    }
+  });
+});
 </script>
 <!-----Script-Scroll-->
 <script>

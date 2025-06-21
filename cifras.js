@@ -1,5 +1,5 @@
 const cifras = [
-  { nome: "Chuvas de Graça", arquivo: "Cifras/chuvas.html" },
-  { nome: "Saudosa Lembrança", arquivo: "saudosa.html" }
-  // Adicione novas aqui
+  { nome: "1 - Chuvas de Graça", arquivo: "chuvas.html" },
+  { nome: "2 - Saudosa Lembrança", arquivo: "saudosa.html" },
+  // Adicione outras cifras aqui
 ];
