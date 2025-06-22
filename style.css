@@ -66,7 +66,7 @@ pre {
            /* ----------Notas------------*/
 
 .nota {
-  color: #085579;
+  color: #004d40;
   font-weight: bold;
 }
 
@@ -94,8 +94,8 @@ pre {
 }
 
 #search:focus {
-  border-color: #4f46e5;
-  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+  border-color: #004d40;
+  box-shadow: 0 0 0 3px rgba(70, 229, 78, 0.2);
 }
 
 input#search {
@@ -127,7 +127,7 @@ input#search {
 }
 
 #scroll-btn {
-  background: #085579;
+  background: #004d40;
   color: white;
   border: none;
   border-radius: 50%;
@@ -139,7 +139,7 @@ input#search {
 }
 
 #scroll-btn:hover {
-  background: #063c49;
+  background: #004d40;
 }
 
 #speed {
