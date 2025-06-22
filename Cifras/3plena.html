@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -5,12 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="stylesheet" href="../style.css" />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <title>3 - Plena Paz</title>
 </head>
 <body>
   <header>
     <h1>3 - Plena Paz</h1>
-
 
 
              <!----------Search------------>
@@ -28,7 +29,7 @@
 
                <!----------Cifra------------>
   <main>
-  <pre>
+   <pre>
 Plena paz e santo gozo,
 Tenho em ti, ó meu Jesus!
 Pois eu cri em Tua morte sobre a cruz;
@@ -72,7 +73,7 @@ Entoando aleluias ao meu Rei!
 
                <!----------Scroll------------>
   <div id="scroll-float">
-    <button id="scroll-btn" onclick="toggleScroll()">⏩</button>
+    <button id="scroll-btn" onclick="toggleScroll()"><i class="fas fa-play"></i></button>
     <input type="range" id="speed" min="10" max="100" value="30" />
   </div>
 
@@ -132,11 +133,11 @@ document.addEventListener("DOMContentLoaded", () => {
       scrollInterval = setInterval(() => {
         window.scrollBy({ top: 1, behavior: "smooth" });
       }, speed);
-      btn.textContent = "Parar rolagem";
+      btn.innerHTML = '<img src="/logos_harpa_grau/pausa.png" alt="Parar" style="height: 24px;">';
       isScrolling = true;
     } else {
       clearInterval(scrollInterval);
-      btn.textContent = "Iniciar rolagem";
+      btn.innerHTML = '<img src="/logos_harpa_grau/play.png" alt="Iniciar" style="height: 24px;">';
       isScrolling = false;
     }
   }
