@@ -172,11 +172,11 @@ document.addEventListener("DOMContentLoaded", () => {
       scrollInterval = setInterval(() => {
         window.scrollBy({ top: 1, behavior: "smooth" });
       }, speed);
-      btn.textContent = "Parar rolagem";
+      btn.textContent = "Parar";
       isScrolling = true;
     } else {
       clearInterval(scrollInterval);
-      btn.textContent = "Iniciar rolagem";
+      btn.textContent = "Iniciar";
       isScrolling = false;
     }
   }
