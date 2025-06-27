@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <title>15 - Converção</title>
+</head>
+<body>
+  <header>
+    <h1>15 - Converção</h1>
+
+
+
+             <!----------Search------------>
+<input
+  type="text"
+  id="search"
+  placeholder="🔍 Buscar música..."
+  onkeydown="buscarCifra(event)"
+  list="sugestoes"
+/>
+<datalist id="sugestoes"></datalist>
+
+  </header>
+
+
+               <!----------Cifra------------>
+  <main>
+  <pre
+        1°           4   1°     5°
+Oh! Quão <u>ce</u>go andei <u>e</u> per<u>di</u>do va<u>gue</u>i
+2°m   5°  1°  1°7 
+Longe, <u>lo</u>nge do <u>meu</u> Salva<u>do</u>!
+   4°       1°  3°m   6°m
+Mas do <u>cé</u>u Ele desceu, e Seu <u>sa</u>n<u>gue</u> ver<u>teu</u>
+   2°m      5°        1°   5°7
+Pra sal<u>var</u> um tão <u>po</u>bre peca<u>dor</u>
+
+      1° 
+Foi na <u>cru</u>z, foi na cruz
+  4°    1°   5 
+Onde um <u>dia</u> eu <u>vi</u> 
+    2°         5°         1°   1°7 
+meu pe<u>ca</u>do casti<u>ga</u>do em Je<u>sus</u>
+   4°                1°  3°m   6°m
+Foi <u>ali</u>, pela fé, que os <u>o</u>lh<u>os</u> a<u>bri</u>
+  2°m      5°    1°  4°
+E a<u>go</u>ra me a<u>le</u>gro em sua <u>luz</u>
+
+        1°           4   1°     5°
+Eu ou<u>vi</u>a falar <u>de</u>ssa <u>gra</u>ça sem <u>par</u>
+°m   5°  1°  1°7 
+Que do <u>ceu</u> trouxe <u>no</u>sso Jes<u>sus</u>
+4°       1°  3°m   6°m
+Mas eu <u>su</u>rdo me fiz, conver<u>ter</u>-<u>me</u> não <u>qui</u>s
+2°m      5°        1°   5°7
+Ao Se<u>nho</u>r, que por <u>mim</u>, morreu na <u>cru</u>z
+
+      1° 
+Foi na <u>cru</u>z, foi na cruz
+  4°    1°   5 
+Onde um <u>dia</u> eu <u>vi</u> 
+    2°         5°         1°   1°7 
+meu pe<u>ca</u>do casti<u>ga</u>do em Je<u>sus</u>
+   4°                1°  3°m   6°m
+Foi <u>ali</u>, pela fé, que os <u>o</u>lh<u>os</u> a<u>bri</u>
+  2°m      5°    1°  4°
+E a<u>go</u>ra me a<u>le</u>gro em sua <u>luz</u>
+
+        1°           4   1°     5°
+Mas um <u>dia</u> senti <u>meu</u> pe<u>ca</u>do, e <u>vi</u>
+°m   5°  1°  1°7 
+Sobre <u>mim</u> a es<u>pa</u>da da <u>lei</u>
+4°       1°  3°m   6°m
+Apres<u>sa</u>do fugi, em Je<u>sus</u> me <u>es</u>con<u>di</u>
+2°m      5°        1°   5°7
+E a<u>bri</u>go se<u>gu</u>ro nEle a<u>che</u>i
+
+      1° 
+Foi na <u>cru</u>z, foi na cruz
+  4°    1°   5 
+Onde um <u>dia</u> eu <u>vi</u> 
+    2°         5°         1°   1°7 
+meu pe<u>ca</u>do casti<u>ga</u>do em Je<u>sus</u>
+   4°                1°  3°m   6°m
+Foi <u>ali</u>, pela fé, que os <u>o</u>lh<u>os</u> a<u>bri</u>
+  2°m      5°    1°  4°
+E a<u>go</u>ra me a<u>le</u>gro em sua <u>luz</u>
+
+        1°           4   1°     5°
+Quão di<u>to</u>so, então, <u>es</u>te <u>meu</u> cora<u>ção</u>
+°m   5°  1°  1°7 
+Conh<u>ce</u>ndo o ex<u>ce</u>lso amor
+4°       1°  3°m   6°m
+Que le<u>vou</u> meu Jesus a so<u>fre</u>r <u>la</u> na <u>cru</u>z
+2°m      5°        1°   5°7
+Pra sal<u>var</u> um tão <u>po</u>bre peca<u>dor</u>
+
+      1° 
+Foi na <u>cru</u>z, foi na cruz
+  4°    1°   5 
+Onde um <u>dia</u> eu <u>vi</u> 
+    2°         5°         1°   1°7 
+meu pe<u>ca</u>do casti<u>ga</u>do em Je<u>sus</u>
+   4°                1°  3°m   6°m
+Foi <u>ali</u>, pela fé, que os <u>o</u>lh<u>os</u> a<u>bri</u>
+  2°m      5°    1°  4°
+E a<u>go</u>ra me a<u>le</u>gro em sua <u>luz</u>
+
+   </pre>
+  </main>
+
+
+
+               <!----------Scroll------------>
+  <div id="scroll-float">
+    <button id="scroll-btn" onclick="toggleScroll()">⏩</button>
+    <input type="range" id="speed" min="10" max="100" value="30" />
+  </div>
+
+
+
+               <!----------Scripts------------>
+<script src="../cifras.js"></script>
+<!-----Script-Busca*-->
+<script>
+  // Preenche o datalist com os nomes das músicas
+  window.onload = () => {
+    const lista = document.getElementById("sugestoes");
+    cifras.forEach(cifra => {
+      const opt = document.createElement("option");
+      opt.value = cifra.nome;
+      lista.appendChild(opt);
+    });
+  };
+
+  // Redireciona ao pressionar Enter
+function buscarCifra(e) {
+  if (e.key !== "Enter") return;
+  const termo = document.getElementById("search").value.toLowerCase();
+
+  const resultado = cifras.find(c =>
+    c.nome.toLowerCase().includes(termo)
+  );
+
+  if (resultado) {
+    window.location.href = `../Cifras/${resultado.arquivo}`;
+  } else {
+    alert("Música não encontrada.");
+  }
+}
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const input = document.getElementById("search");
+
+  input.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      buscarCifra(event);
+    }
+  });
+});
+</script>
+<!-----Script-Scroll-->
+<script>
+  let scrollInterval = null;
+  let isScrolling = false;
+
+  function toggleScroll() {
+    const btn = document.getElementById("scroll-btn");
+    const speed = parseInt(document.getElementById("speed").value);
+
+    if (!isScrolling) {
+      scrollInterval = setInterval(() => {
+        window.scrollBy({ top: 1, behavior: "smooth" });
+      }, speed);
+      btn.textContent = "Parar rolagem";
+      isScrolling = true;
+    } else {
+      clearInterval(scrollInterval);
+      btn.textContent = "Iniciar rolagem";
+      isScrolling = false;
+    }
+  }
+
+  document.getElementById("speed").addEventListener("input", () => {
+    if (isScrolling) {
+      toggleScroll();
+      toggleScroll();
+    }
+  });
+</script>
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const pre = document.querySelector("pre");
+    const texto = pre.innerHTML;
+
+    // Regex para detectar graus como: 1°, 1°m, 4°7, 5°9, 2°m7 etc.
+    const formatado = texto.replace(/(?<!\w)(\d°m?(?:7|9)?)(?!\w)/g, '<span class="nota">$1</span>');
+
+    pre.innerHTML = formatado;
+  });
+</script>
+</body>
+</html>
