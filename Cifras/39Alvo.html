@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>39 - Alvo Mais Que A Neve</title>
+</head>
+<body>
+  <header>
+    <h1>39 - Alvo Mais Que A Neve</h1>
+
+
+
+             <!----------Search------------>
+<input
+  type="text"
+  id="search"
+  placeholder="🔍 Buscar música..."
+  onkeydown="buscarCifra(event)"
+  list="sugestoes"
+/>
+<datalist id="sugestoes"></datalist>
+
+  </header>
+
+
+               <!----------Cifra------------>
+  <main>
+  <pre>
+
+<u>Ben</u>dito seja o Cor<u>de</u>iro
+Que na cruz <u>por</u> nós padeceu <u>Be</u>ndito seja o Seu sangue
+Que por <u>nós</u> ali Ele verteu
+ nesse sangue, lavados
+Com roupas que tão alvas são
+Os pecadores remidos
+Que perante seu Deus já estão
+
+Alvo mais que a neve
+Alvo mais que a neve
+Sim, neste sangue lavado
+Mais alvo que a neve serei
+
+Quão espinhosa a coroa
+Que Jesus por nós suportou
+Ó, quão profundas as chagas
+Que nos provam o quanto Ele amou
+Eis, nessas chagas, pureza
+Para o maior pecador
+Pois que mais alvo que a neve
+O Teu sangue nos torna, Senhor
+
+Alvo mais que a neve
+Alvo mais que a neve
+Sim, nesse sangue lavado
+Mais alvo que a neve serei
+
+Se nós a Ti confessarmos
+E seguirmos na Tua luz
+Tu não somente perdoas
+Purificas também, ó Jesus
+Sim, e de todo pecado
+Que maravilha de amor
+Pois, que mais alvo que a neve
+O Teu sangue nos torna, Senhor
+
+Alvo mais que a neve
+Alvo mais que a neve
+Sim, nesse sangue lavado
+Mais alvo que a neve serei
+
+Sim, nesse sangue lavado
+Mais alvo que a neve serei
+   </pre>
+  </main>
+
+
+
+               <!----------Scroll------------>
+  <div id="scroll-float">
+    <button id="scroll-btn" onclick="toggleScroll()"><i class="fas fa-play"></i></button>
+    <input type="range" id="speed" min="10" max="100" value="30" />
+  </div>
+
+
+
+               <!----------Scripts------------>
+<script src="../cifras.js"></script>
+<!-----Script-Busca*-->
+<script>
+  // Preenche o datalist com os nomes das músicas
+  window.onload = () => {
+    const lista = document.getElementById("sugestoes");
+    cifras.forEach(cifra => {
+      const opt = document.createElement("option");
+      opt.value = cifra.nome;
+      lista.appendChild(opt);
+    });
+  };
+
+  // Redireciona ao pressionar Enter
+function buscarCifra(e) {
+  if (e.key !== "Enter") return;
+  const termo = document.getElementById("search").value.toLowerCase();
+
+  const resultado = cifras.find(c =>
+    c.nome.toLowerCase().includes(termo)
+  );
+
+  if (resultado) {
+    window.location.href = `../Cifras/${resultado.arquivo}`;
+  } else {
+    alert("Música não encontrada.");
+  }
+}
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const input = document.getElementById("search");
+
+  input.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      buscarCifra(event);
+    }
+  });
+});
+</script>
+<!-----Script-Scroll-->
+<script>
+  let scrollInterval = null;
+  let isScrolling = false;
+
+  function toggleScroll() {
+    const btn = document.getElementById("scroll-btn");
+    const speed = parseInt(document.getElementById("speed").value);
+
+    if (!isScrolling) {
+      scrollInterval = setInterval(() => {
+        window.scrollBy({ top: 1, behavior: "smooth" });
+      }, speed);
+      btn.innerHTML = '<img src="./logos_harpa_grau/pausa.png" alt="Parar" style="height: 24px;">';
+      isScrolling = true;
+    } else {
+      clearInterval(scrollInterval);
+      btn.innerHTML = '<img src="./logos_harpa_grau/play.png" alt="Iniciar" style="height: 24px;">';
+      isScrolling = false;
+    }
+  }
+
+  document.getElementById("speed").addEventListener("input", () => {
+    if (isScrolling) {
+      toggleScroll();
+      toggleScroll();
+    }
+  });
+</script>
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const pre = document.querySelector("pre");
+    const texto = pre.innerHTML;
+
+    // Regex para detectar graus como: 1°, 1°m, 4°7, 5°9, 2°m7 etc.
+    const formatado = texto.replace(/(?<!\w)(\d°m?(?:7|9)?)(?!\w)/g, '<span class="nota">$1</span>');
+
+    pre.innerHTML = formatado;
+  });
+</script>
+</body>
+</html>
