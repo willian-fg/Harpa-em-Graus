@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -6,11 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="stylesheet" href="../style.css" />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-  <title>1 - Chuvas de Graça</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>000</title>
 </head>
 <body>
   <header>
-    <h1>1 - Chuvas de Graça</h1>
+    <h1>000</h1>
 
 
 
@@ -30,81 +30,7 @@
                <!----------Cifra------------>
   <main>
   <pre>
-1°         4°          1°
-<u>De</u>us prome<u>teu</u>, com cer<u>te</u>za
-5°                  1°
-<u>Chu</u>vas de graça man<u>dar</u>
-5°              1°  6°m
-<u>Ele</u> nos dá forta<u>le</u>-<u>za</u>
-2°m                  5°          
-<u>E</u> ricas bênçãos sem <u>par</u>
 
-1°   4°     1°
-<u>Chu</u>-<u>vas</u> de <u>gra</u>ça
-1°        6°m         5°
-<u>Chu</u>vas pe<u>di</u>mos, Se<u>nhor</u>
-1°        4°          1°  6°m       
-<u>Man</u>da-nos <u>Chu</u>vas cons<u>tan</u>-<u>tes</u>
-2°m               5°  
-<u>Chu</u>vas do Consola<u>dor</u>
-
-1°         4°       1°
-<u>Cri</u>sto nos <u>tem</u> conce<u>di</u>do
-5°              1°
-<u>O</u> Santo Consola<u>dor</u>
-5°                 1°  6°m
-<u>De</u> plena paz nos en<u>chi</u>-<u>do</u>
-
-<u>Pa</u>ra o reinado de a<u>mor</u>
-
-1°   4°     1°
-<u>Chu</u>-<u>vas</u> de <u>gra</u>ça
-1°        6°         5°
-<u>Chu</u>vas pe<u>di</u>mos, Se<u>nhor</u>
-1°        4°          1°  6°m       
-<u>Man</u>da-nos <u>Chu</u>vas cons<u>tan</u>-<u>tes</u>
-2°m               5°  
-<u>Chu</u>vas do Consola<u>dor</u>
-
-
-1°         4°         1°
-<u>Dá</u>-nos, Se<u>nhor</u>, ampla<u>men</u>te
-5°                  1°
-<u>Teu</u> grande gozo e po<u>der</u>
-5°                  1°  6°m
-<u>Fo</u>nte de amor perma<u>nen</u>-<u>te</u>
-
-<u>Põe</u> dentro de nosso <u>ser</u>
-
-
-1°   4°     1°
-<u>Chu</u>-<u>vas</u> de <u>gra</u>ça
-1°                 5°
-<u>Chu</u>vas pe<u>di</u>mos, Se<u>nhor</u>
-1°        4°          1°  6°m       
-<u>Man</u>da-nos <u>Chu</u>vas cons<u>tan</u>-<u>tes</u>
-2°m               5°  
-<u>Chu</u>vas do Consola<u>dor</u>
-
-
-1°         4°          1°
-<u>Fa</u>ze os Teus <u>ser</u>vos pie<u>do</u>sos
-5°                  1°
-<u>Dá</u>-lhes virtude e va<u>lor</u>
-5°                      1°  6°m
-<u>Da</u>ndo os Teus dons preci<u>o</u>-<u>sos</u>
-2°m             5°
-<u>Do</u> Santo Precep<u>tor</u>
-
-
-1°   4°     1°
-<u>Chu</u>-<u>vas</u> de <u>gra</u>ça
-1°                 5°
-<u>Chu</u>vas pe<u>di</u>mos, Se<u>nhor</u>
-1°        4°          1°  6°m       
-<u>Man</u>da-nos <u>Chu</u>vas cons<u>tan</u>-<u>tes</u>
-2°m               5°  
-<u>Chu</u>vas do Consola<u>dor</u>
 
    </pre>
   </main>
@@ -113,7 +39,7 @@
 
                <!----------Scroll------------>
   <div id="scroll-float">
-    <button id="scroll-btn" onclick="toggleScroll()">⏩</button>
+    <button id="scroll-btn" onclick="toggleScroll()"><i class="fas fa-play"></i></button>
     <input type="range" id="speed" min="10" max="100" value="30" />
   </div>
 
@@ -173,11 +99,11 @@ document.addEventListener("DOMContentLoaded", () => {
       scrollInterval = setInterval(() => {
         window.scrollBy({ top: 1, behavior: "smooth" });
       }, speed);
-      btn.textContent = "Parar rolagem";
+      btn.innerHTML = '<i class="fas fa-pause"></i>';
       isScrolling = true;
     } else {
       clearInterval(scrollInterval);
-      btn.textContent = "Iniciar rolagem";
+      btn.innerHTML = '<i class="fas fa-play"></i>';
       isScrolling = false;
     }
   }

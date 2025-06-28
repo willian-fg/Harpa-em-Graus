@@ -188,11 +188,11 @@ document.addEventListener("DOMContentLoaded", () => {
       scrollInterval = setInterval(() => {
         window.scrollBy({ top: 1, behavior: "smooth" });
       }, speed);
-      btn.innerHTML = '<img src="/logos_harpa_grau/pausa.png" alt="Parar" style="height: 24px;">';
+      btn.innerHTML = '<i class="fas fa-pause"></i>';
       isScrolling = true;
     } else {
       clearInterval(scrollInterval);
-      btn.innerHTML = '<img src="/logos_harpa_grau/play.png" alt="Iniciar" style="height: 24px;">';
+      btn.innerHTML = '<i class="fas fa-play"></i>';
       isScrolling = false;
     }
   }

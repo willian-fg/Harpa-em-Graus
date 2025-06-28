@@ -5,11 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="stylesheet" href="../style.css" />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-  <title>15 - Converção</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>15 - Conversão</title>
 </head>
 <body>
   <header>
-    <h1>15 - Converção</h1>
+    <h1>15 - Conversão</h1>
 
 
 
@@ -28,9 +29,7 @@
 
                <!----------Cifra------------>
   <main>
-    <pre>
-  
-
+  <pre>
           1°        4     1°     5°
 Oh! Quão <u>ce</u>go andei <u>e</u> per<u>di</u>do va<u>gue</u>i
        2°m       5°      1°  1°7 
@@ -112,14 +111,15 @@ Foi <u>ali</u>, pela fé, que os <u>o</u>lh<u>os</u> a<u>bri</u>
    2°m      5°             1°  4°
 E a<u>go</u>ra me a<u>le</u>gro em sua <u>luz</u>
 
-    </pre>
+
+   </pre>
   </main>
 
 
 
                <!----------Scroll------------>
   <div id="scroll-float">
-    <button id="scroll-btn" onclick="toggleScroll()">⏩</button>
+    <button id="scroll-btn" onclick="toggleScroll()"><i class="fas fa-play"></i></button>
     <input type="range" id="speed" min="10" max="100" value="30" />
   </div>
 
@@ -179,11 +179,11 @@ document.addEventListener("DOMContentLoaded", () => {
       scrollInterval = setInterval(() => {
         window.scrollBy({ top: 1, behavior: "smooth" });
       }, speed);
-      btn.textContent = "Parar rolagem";
+      btn.innerHTML = '<i class="fas fa-pause"></i>';
       isScrolling = true;
     } else {
       clearInterval(scrollInterval);
-      btn.textContent = "Iniciar rolagem";
+      btn.innerHTML = '<i class="fas fa-play"></i>';
       isScrolling = false;
     }
   }
