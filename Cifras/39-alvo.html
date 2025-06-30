@@ -31,49 +31,69 @@
   <main>
   <pre>
 
-<u>Ben</u>dito seja o Cor<u>de</u>iro
-Que na cruz <u>por</u> nós padeceu <u>Be</u>ndito seja o Seu sangue
-Que por <u>nós</u> ali Ele verteu
- nesse sangue, lavados
-Com roupas que tão alvas são
-Os pecadores remidos
-Que perante seu Deus já estão
+[Primeira Parte]
 
-Alvo mais que a neve
-Alvo mais que a neve
-Sim, neste sangue lavado
-Mais alvo que a neve serei
+1°                 6°m7  
+<u>Ben</u>dito seja o Cor<u>dei</u>ro  
+         5°  
+Que na <u>cruz</u> por nós pade<u>ceu</u>  
+1°                  6°m7  
+<u>Ben</u>dito seja o Seu <u>san</u>gue  
+         5°              1°  
+Que por <u>nós</u> ali Ele ver<u>teu</u>  
 
-Quão espinhosa a coroa
-Que Jesus por nós suportou
-Ó, quão profundas as chagas
-Que nos provam o quanto Ele amou
-Eis, nessas chagas, pureza
-Para o maior pecador
-Pois que mais alvo que a neve
-O Teu sangue nos torna, Senhor
+4°                    6°m7  
+<u>Eis</u> nesse sangue, la<u>va</u>dos  
+4°                        5°  
+Com rou<u>pas</u> que tão alvas <u>são</u>  
+1°               6°m7  
+<u>Os</u> pecadores re<u>mi</u>dos  
+       5°                   1°  
+Que pe<u>ran</u>te seu Deus já es<u>tão</u>  
 
-Alvo mais que a neve
-Alvo mais que a neve
-Sim, nesse sangue lavado
-Mais alvo que a neve serei
+[Refrão]
 
-Se nós a Ti confessarmos
-E seguirmos na Tua luz
-Tu não somente perdoas
-Purificas também, ó Jesus
-Sim, e de todo pecado
-Que maravilha de amor
-Pois, que mais alvo que a neve
-O Teu sangue nos torna, Senhor
+1°                5°/7°  
+<u>Al</u>vo mais que a <u>ne</u>ve  
+4°                1°  
+<u>Al</u>vo mais que a <u>ne</u>ve  
+1°/3°               4°    
+Se nesse <u>san</u>gue, la<u>va</u>do  
+     1°           5°      1°  
+Mais <u>al</u>vo que a <u>ne</u>ve se<u>rei</u>  
 
-Alvo mais que a neve
-Alvo mais que a neve
-Sim, nesse sangue lavado
-Mais alvo que a neve serei
+[Segunda Parte]
 
-Sim, nesse sangue lavado
-Mais alvo que a neve serei
+1°                 6°m7  
+<u>Quão</u> espinhosa a co<u>ro</u>a  
+       5°  
+Que Je<u>sus</u> por nós suporto<u>u</u>  
+1°                       6°m7  
+<u>Oh</u>! Quão profundas as <u>cha</u>gas  
+          5°                   1°  
+Que nos <u>pro</u>vam o quanto Ele a<u>mou</u>  
+
+4°                    6°m7  
+<u>Eis</u> nessas chagas pu<u>re</u>za  
+4°                5°  
+Para o <u>ma</u>ior pecador  
+1°                         6°m7  
+<u>Pois</u>, que mais alvo que a <u>ne</u>ve  
+       5°                    1°  
+O Teu <u>san</u>gue nos torna, Se<u>nhor</u>  
+
+[Refrão — repetir]
+
+1°                5°/7°  
+<u>Al</u>vo mais que a <u>ne</u>ve  
+4°                1°  
+<u>Al</u>vo mais que a <u>ne</u>ve  
+1°/3°               4°    
+Se nesse <u>san</u>gue, la<u>va</u>do  
+     1°           5°      1°  
+Mais <u>al</u>vo que a <u>ne</u>ve se<u>rei</u>
+
+
    </pre>
   </main>
 
@@ -141,11 +161,11 @@ document.addEventListener("DOMContentLoaded", () => {
       scrollInterval = setInterval(() => {
         window.scrollBy({ top: 1, behavior: "smooth" });
       }, speed);
-      btn.innerHTML = '<img src="./logos_harpa_grau/pausa.png" alt="Parar" style="height: 24px;">';
+      btn.innerHTML = '<i class="fas fa-pause"></i>';
       isScrolling = true;
     } else {
       clearInterval(scrollInterval);
-      btn.innerHTML = '<img src="./logos_harpa_grau/play.png" alt="Iniciar" style="height: 24px;">';
+      btn.innerHTML = '<i class="fas fa-play"></i>';
       isScrolling = false;
     }
   }
