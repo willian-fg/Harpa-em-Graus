@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>115 - Trabalhai E Orai</title>
+</head>
+<body>
+  <header>
+    <h1>115 - Trabalhai E Orai</h1>
+
+
+
+             <!----------Search------------>
+<input
+  type="text"
+  id="search"
+  placeholder="🔍 Buscar música..."
+  onkeydown="buscarCifra(event)"
+  list="sugestoes"
+/>
+<datalist id="sugestoes"></datalist>
+
+  </header>
+
+
+               <!----------Cifra------------>
+  <main>
+  <pre>
+[Primeira Parte]
+
+    1°                       5°
+Eu <u>que</u>ro trabalhar pra meu Se<u>nhor</u>  
+  2°m       5°7         1°
+Le<u>van</u>do a pa<u>la</u>vra com a<u>mor</u>  
+      1°            1°7
+Quero <u>eu</u> cantar e o<u>rar</u>  
+     4°            4°m
+E ocu<u>pa</u>do quero es<u>tar</u>  
+         1°   5°7    1°
+Sim, na <u>vi</u>nha <u>do</u> Se<u>nhor</u> 
+
+[Refrão]
+
+      1°      6°m
+Traba<u>lha</u>i e o<u>rai</u>  
+     1°         6°m          5°
+Na se<u>a</u>ra e na <u>vi</u>nha do Se<u>nhor</u>  
+       1°      1°7
+Meu de<u>se</u>jo é o<u>rar</u>  
+     4°            4°m
+E ocu<u>pa</u>do quero es<u>tar</u>  
+         1°   5°7    1°
+Sim, na <u>vi</u>nha <u>do</u> Se<u>nhor</u>  
+
+[Segunda Parte]
+
+1°                    5°
+Eu <u>que</u>ro, cada dia, traba<u>lhar</u>  
+   2°m          5°7       1°
+Es<u>cra</u>vos do pecado liber<u>tar</u>  
+     1°          1°7
+Condu<u>zi</u>-los a Je<u>sus</u>  
+      4°           4°m
+Nosso <u>gui</u>a, nossa <u>luz</u>  
+         1°   5°7    1°
+Sim, na <u>vi</u>nha <u>do</u> Se<u>nhor</u> 
+
+[Refrão]
+
+      1°      6°m
+Traba<u>lha</u>i e o<u>rai</u>  
+     1°         6°m          5°
+Na se<u>a</u>ra e na <u>vi</u>nha do Se<u>nhor</u>  
+       1°      1°7
+Meu de<u>se</u>jo é o<u>rar</u>  
+     4°            4°m
+E ocu<u>pa</u>do quero es<u>tar</u>  
+         1°   5°7    1°
+Sim, na <u>vi</u>nha <u>do</u> Se<u>nhor</u> 
+
+[Terceira Parte]
+
+    1°                      5°
+Eu <u>que</u>ro ser obreiro de va<u>lor</u>  
+     2°m        5°7          1°
+Con<u>fi</u>ando no poder do Salva<u>dor</u>  
+       1°          1°7
+<u>Se</u> quiseres trabal<u>har</u>  
+     4°           4°m
+<u>A</u>charás também lu<u>gar</u>  
+         1°   5°7    1°
+Sim, na <u>vi</u>nha <u>do</u> Se<u>nhor</u>
+
+[Refrão — com final extendido]
+
+      1°      6°m
+Traba<u>lha</u>i e o<u>rai</u>  
+     1°         6°m          5°
+Na se<u>a</u>ra e na <u>vi</u>nha do Se<u>nhor</u>  
+       1°      1°7
+Meu de<u>se</u>jo é o<u>rar</u>  
+     4°            4°m
+E ocu<u>pa</u>do quero es<u>tar</u>  
+         1°   5°7    1°
+Sim, na <u>vi</u>nha <u>do</u> Se<u>nhor</u> 
+
+[Última Estrofe]
+
+    1°                    5°
+Eu <u>que</u>ro, cada dia, traba<u>lhar</u>  
+   2°m        5°7        1°
+Es<u>cra</u>vos do pe<u>ca</u>do liber<u>tar</u>  
+     1°          1°7
+Condu<u>zi</u>-los a Je<u>sus</u>
+      4°           4°m
+Nosso <u>gui</u>a, nossa <u>luz</u>  
+         1°   5°7    1°
+Sim, na <u>vi</u>nha <u>do</u> Se<u>nhor</u>  
+
+[Refrão Final]
+
+      1°      6°m
+Traba<u>lha</u>i e o<u>rai</u>  
+     1°         6°m          5°
+Na se<u>a</u>ra e na <u>vi</u>nha do Se<u>nhor</u>  
+       1°      1°7
+Meu de<u>se</u>jo é o<u>rar</u>  
+     4°            4°m
+E ocu<u>pa</u>do quero es<u>tar</u>  
+         1°   5°7    1°
+Sim, na <u>vi</u>nha <u>do</u> Se<u>nhor</u> 
+
+
+   </pre>
+  </main>
+
+
+
+               <!----------Scroll------------>
+  <div id="scroll-float">
+    <button id="scroll-btn" onclick="toggleScroll()"><i class="fas fa-play"></i></button>
+    <input type="range" id="speed" min="10" max="100" value="30" />
+  </div>
+
+
+
+               <!----------Scripts------------>
+<script src="../cifras.js"></script>
+<!-----Script-Busca*-->
+<script>
+  // Preenche o datalist com os nomes das músicas
+  window.onload = () => {
+    const lista = document.getElementById("sugestoes");
+    cifras.forEach(cifra => {
+      const opt = document.createElement("option");
+      opt.value = cifra.nome;
+      lista.appendChild(opt);
+    });
+  };
+
+  // Redireciona ao pressionar Enter
+function buscarCifra(e) {
+  if (e.key !== "Enter") return;
+  const termo = document.getElementById("search").value.toLowerCase();
+
+  const resultado = cifras.find(c =>
+    c.nome.toLowerCase().includes(termo)
+  );
+
+  if (resultado) {
+    window.location.href = `../Cifras/${resultado.arquivo}`;
+  } else {
+    alert("Música não encontrada.");
+  }
+}
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const input = document.getElementById("search");
+
+  input.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      buscarCifra(event);
+    }
+  });
+});
+</script>
+<!-----Script-Scroll-->
+<script>
+  let scrollInterval = null;
+  let isScrolling = false;
+
+  function toggleScroll() {
+    const btn = document.getElementById("scroll-btn");
+    const speed = parseInt(document.getElementById("speed").value);
+
+    if (!isScrolling) {
+      scrollInterval = setInterval(() => {
+        window.scrollBy({ top: 1, behavior: "smooth" });
+      }, speed);
+      btn.innerHTML = '<i class="fas fa-pause"></i>';
+      isScrolling = true;
+    } else {
+      clearInterval(scrollInterval);
+      btn.innerHTML = '<i class="fas fa-play"></i>';
+      isScrolling = false;
+    }
+  }
+
+  document.getElementById("speed").addEventListener("input", () => {
+    if (isScrolling) {
+      toggleScroll();
+      toggleScroll();
+    }
+  });
+</script>
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const pre = document.querySelector("pre");
+    const texto = pre.innerHTML;
+
+    // Regex para detectar graus como: 1°, 1°m, 4°7, 5°9, 2°m7 etc.
+    const formatado = texto.replace(/(?<!\w)(\d°m?(?:7|9)?)(?!\w)/g, '<span class="nota">$1</span>');
+
+    pre.innerHTML = formatado;
+  });
+</script>
+</body>
+</html>

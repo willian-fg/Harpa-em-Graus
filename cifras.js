@@ -4,6 +4,9 @@ const cifras = [
   { nome: "3 - Plena Paz", arquivo: "3-plena.html" },
   { nome: "15 - Conversão", arquivo: "15-conversão.html"},
   { nome: "39 - Alvo Mais Que A Neve", arquivo: "39-alvo.html"},
+  { nome: "115 - Trabalhai E Orai", arquivo: "115-trabalhai.html"},
+
+  // { nome: "", arquivo: ""},
   
   // Adicione outras cifras aqui
 ];
