@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>36 - O Exilado</title>
+</head>
+<body>
+  <header>
+    <h1>36 - O Exilado</h1>
+
+
+
+             <!----------Search------------>
+<input
+  type="text"
+  id="search"
+  placeholder="🔍 Buscar música..."
+  onkeydown="buscarCifra(event)"
+  list="sugestoes"
+/>
+<datalist id="sugestoes"></datalist>
+
+  </header>
+
+
+               <!----------Cifra------------>
+  <main>
+   <pre>
+[Intro]
+
+1°   5°   6°m   4°
+1°   6°m  5°
+
+[Primeira Parte]
+
+1°     5°/7°       6°m         4°     1°      5°7
+<u>Da</u> linda pátria estou bem <u>lon</u>ge; Can<u>sa</u>do estou  
+1°     5°/7°   6°m     4°     1°         5°7        1°  1°7
+<u>Eu</u> tenho de Jesus sau<u>da</u>de, Oh, <u>quan</u>do é que eu <u>vou</u>?  
+5°           1°    6°m    4°         1°
+<u>Pas</u>sarinhos, belas <u>flo</u>res, Querem me en<u>can</u>tar  
+1°    5°            6°m     4°    1°       5°
+<u>São</u> vãos terrestres esplen<u>do</u>res, Mas con<u>tem</u>plo o meu  
+1°
+<u>Lar</u>
+
+[Segunda Parte]
+
+1°   5°        6°m     4°     1°   6°m    5°
+<u>Je</u>sus me deu a Sua pro<u>mes</u>sa; <u>Vem</u> me bus<u>car</u>  
+1°     5°     6°m      4°     1°        5°     1°  1°7
+<u>Meu</u> coração está com <u>pres</u>sa, Eu <u>que</u>ro já vo<u>ar</u>  
+5°            1°    6°m     4°    5°     1°
+<u>Meus</u> pecados foram <u>mui</u>tos, Mui cul<u>pa</u>do <u>sou</u>  
+1°   5°             6°m     4°    1°         5°     1°
+<u>Po</u>rém, Seu sangue põe-me <u>lim</u>po; Eu para pátria <u>vou</u>
+
+[Terceira Parte]
+
+1°      5°        6°m    4°     1°   6°m   5°
+<u>Qual</u> filho de seu lar sau<u>do</u>so, Eu <u>que</u>ro <u>ir</u>  
+1°        5°       6°m     4°     1°             5°      1°
+<u>Qual</u> passarinho para o <u>ni</u>nho, Pra os <u>bra</u>ços Seus fu<u>gir</u>
+
+[Quarta Parte]
+
+5°             1°      6°m     4°      5°        1°
+<u>É</u> fiel – Sua vinda é <u>cer</u>ta, Quan<u>do</u>... Eu não <u>sei</u>  
+1°    5°         6°m      4°    1°          5°   1°
+<u>Mas</u> Ele manda estar a<u>ler</u>ta; Do exílio vol<u>ta</u>rei  
+1°     5°          6°m    4°     1°   6°m    5°
+<u>Sua</u> vinda aguardo eu can<u>tan</u>do; Meu <u>lar</u> no <u>céu</u>  
+1°      5°            6°m       4°   1°         5°     1°  1°7
+<u>Seus</u> passos hei de ouvir so<u>an</u>do, Além do escuro <u>véu</u>  
+
+[Refrão Final]
+
+5°            1°    6°m      4°    5°     1°
+<u>Pas</u>sarinhos, belas <u>flo</u>res, Querem m’en<u>can</u>tar  
+1°    5°            6°m       4°   1°       5°
+<u>São</u> vãos terrestres esplen<u>do</u>res, Mas con<u>tem</u>plo o meu  
+1°
+<u>Lar</u>
+
+
+   </pre>
+  </main>
+
+
+
+               <!----------Scroll------------>
+  <div id="scroll-float">
+    <button id="scroll-btn" onclick="toggleScroll()"><i class="fas fa-play"></i></button>
+    <input type="range" id="speed" min="10" max="100" value="30" />
+  </div>
+
+
+
+               <!----------Scripts------------>
+<script src="../cifras.js"></script>
+<!-----Script-Busca*-->
+<script>
+  // Preenche o datalist com os nomes das músicas
+  window.onload = () => {
+    const lista = document.getElementById("sugestoes");
+    cifras.forEach(cifra => {
+      const opt = document.createElement("option");
+      opt.value = cifra.nome;
+      lista.appendChild(opt);
+    });
+  };
+
+  // Redireciona ao pressionar Enter
+function buscarCifra(e) {
+  if (e.key !== "Enter") return;
+  const termo = document.getElementById("search").value.toLowerCase();
+
+  const resultado = cifras.find(c =>
+    c.nome.toLowerCase().includes(termo)
+  );
+
+  if (resultado) {
+    window.location.href = `../Cifras/${resultado.arquivo}`;
+  } else {
+    alert("Música não encontrada.");
+  }
+}
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const input = document.getElementById("search");
+
+  input.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      buscarCifra(event);
+    }
+  });
+});
+</script>
+<!-----Script-Scroll-->
+<script>
+  let scrollInterval = null;
+  let isScrolling = false;
+
+  function toggleScroll() {
+    const btn = document.getElementById("scroll-btn");
+    const speed = parseInt(document.getElementById("speed").value);
+
+    if (!isScrolling) {
+      scrollInterval = setInterval(() => {
+        window.scrollBy({ top: 1, behavior: "smooth" });
+      }, speed);
+      btn.innerHTML = '<i class="fas fa-pause"></i>';
+      isScrolling = true;
+    } else {
+      clearInterval(scrollInterval);
+      btn.innerHTML = '<i class="fas fa-play"></i>';
+      isScrolling = false;
+    }
+  }
+
+  document.getElementById("speed").addEventListener("input", () => {
+    if (isScrolling) {
+      toggleScroll();
+      toggleScroll();
+    }
+  });
+</script>
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const pre = document.querySelector("pre");
+    const texto = pre.innerHTML;
+
+    // Regex para detectar graus como: 1°, 1°m, 4°7, 5°9, 2°m7 etc.
+    const formatado = texto.replace(/(?<!\w)(\d°m?(?:7|9)?)(?!\w)/g, '<span class="nota">$1</span>');
+
+    pre.innerHTML = formatado;
+  });
+</script>
+</body>
+</html>
