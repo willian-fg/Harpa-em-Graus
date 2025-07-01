@@ -5,6 +5,7 @@ const cifras = [
   { nome: "15 - Conversão", arquivo: "15-conversão.html"},
   { nome: "39 - Alvo Mais Que A Neve", arquivo: "39-alvo.html"},
   { nome: "115 - Trabalhai E Orai", arquivo: "115-trabalhai.html"},
+  { nome: "212 - Os Guerreiros Se Preparam", arquivo: "212-osguerreiros.html"}
 
   // { nome: "", arquivo: ""},
   

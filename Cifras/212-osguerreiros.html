@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>212 - Os Guerreiros Se Preparam</title>
+</head>
+<body>
+  <header>
+    <h1>212 - Os Guerreiros Se Preparam</h1>
+
+
+
+             <!----------Search------------>
+<input
+  type="text"
+  id="search"
+  placeholder="🔍 Buscar música..."
+  onkeydown="buscarCifra(event)"
+  list="sugestoes"
+/>
+<datalist id="sugestoes"></datalist>
+
+  </header>
+
+
+               <!----------Cifra------------>
+  <main>
+  <pre>
+[Intro] 1°  1°7  4°  4°#°  1°
+        5°  1°  5°4  5°  1°  5°
+
+[Primeira Parte]
+1°       4°      1°
+Os guerreiros se preparam
+ 5°4      5°     1°   1°7
+Para a grande luta
+4°    4°#°   1°
+É Jesus o capitão
+      2°7           5°4  5°
+Que avante os levará
+1°    4°     1°
+A milícia dos remidos
+ 5°4    5°    1°
+Marcha impoluta
+ 4°        4°#°  1°
+Certa que a vitória
+   5°4  5°  1°  4°
+Alcançará!
+
+[Refrão]
+
+     1°   4°/5°         1°
+Eu quero estar com Cristo
+             1°/5°   5°4  5°
+Onde a luta se travar
+    5°7         1°
+No lance imprevisto
+     2°7             5°
+Na frente me encontrar
+
+           1°             1°7
+Até que o possa ver na glória
+     4°        4°#°  1°
+Se alegrando da vitória
+4°/5°   1°
+Onde Deus vai
+    5°4  5°  1°  5°
+Me coroar!
+
+[Segunda Parte]
+1°       4°    1°
+Eis os batalhões de Cristo
+  5°4    5°      1°    1°7
+Prosseguindo avante
+ 4°      4°#°      1°
+Não os vês com que valor
+    2°7             5°4  5°
+Combatem contra o mal?
+
+ 1°     4°    1°
+Podes tu ficar dormindo
+ 5°4    5°   1°
+Mesmo vacilante
+  4°      4°#°  1°
+Quando atacam outros
+   5°4  5°  1°   4°
+A belial!
+
+[Refrão]
+
+     1°   4°/5°         1°
+Eu quero estar com Cristo
+             1°/5°   5°4  5°
+Onde a luta se travar
+    5°7         1°
+No lance imprevisto
+     2°7             5°
+Na frente me encontrar
+
+           1°             1°7
+Até que o possa ver na glória
+     4°        4°#°  1°
+Se alegrando da vitória
+4°/5°   1°
+Onde Deus vai
+    5°4  5°  1°   5°
+Me coroar!
+
+[Terceira Parte]
+
+ 1°      4°      1°
+Dá-te pressa, não vaciles
+ 5°4   5°        1°   1°7
+Hoje Deus te chama
+ 4°    4°#°   1°
+Para vires pelejar
+    2°7         5°4  5°
+Ao lado do Senhor
+1°      4°    1°
+Entra na batalha
+      5°4     5°       1°
+Onde mais o fogo inflama
+4°    4°#°  1°
+E peleja contra
+   5°4  5°    1°   4°/5°
+O vil tentador!
+
+[Refrão]
+
+     1°   4°/5°         1°
+Eu quero estar com Cristo
+             1°/5°   5°4  5°
+Onde a luta se travar
+    5°7         1°
+No lance imprevisto
+     2°7             5°
+Na frente me encontrar
+
+           1°             1°7
+Até que o possa ver na glória
+     4°        4°#°  1°
+Se alegrando da vitória
+4°/5°   1°
+Onde Deus vai
+    5°4  5°  1°  5°
+Me coroar!
+
+[Quarta Parte]
+1°    4°   1°
+A peleja é tremenda
+ 5°4    5°     1°   1°7
+Torna-se renhida
+ 4°       4°#°   1°
+Mas são poucos os soldados
+ 2°7        5°4  5°
+Para batalhar
+1°      4°    1°
+Ó vem libertar
+          5°4    5°    1°
+As pobres almas oprimidas
+ 4°       4°#°  1°
+De quem furioso
+     5°4   5°  1°   4°/5°
+As quer tragar!
+
+[Refrão]
+
+     1°   4°/5°         1°
+Eu quero estar com Cristo
+             1°/5°   5°4  5°
+Onde a luta se travar
+    5°7         1°
+No lance imprevisto
+     2°7             5°
+Na frente me encontrar
+
+           1°             1°7
+Até que o possa ver na glória
+     4°        4°#°  1°
+Se alegrando da vitória
+4°/5°   1°
+Onde Deus vai
+    5°4  5°  1°
+Me coroar!
+
+   </pre>
+  </main>
+
+
+
+               <!----------Scroll------------>
+  <div id="scroll-float">
+    <button id="scroll-btn" onclick="toggleScroll()"><i class="fas fa-play"></i></button>
+    <input type="range" id="speed" min="10" max="100" value="30" />
+  </div>
+
+
+
+               <!----------Scripts------------>
+<script src="../cifras.js"></script>
+<!-----Script-Busca*-->
+<script>
+  // Preenche o datalist com os nomes das músicas
+  window.onload = () => {
+    const lista = document.getElementById("sugestoes");
+    cifras.forEach(cifra => {
+      const opt = document.createElement("option");
+      opt.value = cifra.nome;
+      lista.appendChild(opt);
+    });
+  };
+
+  // Redireciona ao pressionar Enter
+function buscarCifra(e) {
+  if (e.key !== "Enter") return;
+  const termo = document.getElementById("search").value.toLowerCase();
+
+  const resultado = cifras.find(c =>
+    c.nome.toLowerCase().includes(termo)
+  );
+
+  if (resultado) {
+    window.location.href = `../Cifras/${resultado.arquivo}`;
+  } else {
+    alert("Música não encontrada.");
+  }
+}
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const input = document.getElementById("search");
+
+  input.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      buscarCifra(event);
+    }
+  });
+});
+</script>
+<!-----Script-Scroll-->
+<script>
+  let scrollInterval = null;
+  let isScrolling = false;
+
+  function toggleScroll() {
+    const btn = document.getElementById("scroll-btn");
+    const speed = parseInt(document.getElementById("speed").value);
+
+    if (!isScrolling) {
+      scrollInterval = setInterval(() => {
+        window.scrollBy({ top: 1, behavior: "smooth" });
+      }, speed);
+      btn.innerHTML = '<i class="fas fa-pause"></i>';
+      isScrolling = true;
+    } else {
+      clearInterval(scrollInterval);
+      btn.innerHTML = '<i class="fas fa-play"></i>';
+      isScrolling = false;
+    }
+  }
+
+  document.getElementById("speed").addEventListener("input", () => {
+    if (isScrolling) {
+      toggleScroll();
+      toggleScroll();
+    }
+  });
+</script>
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const pre = document.querySelector("pre");
+    const texto = pre.innerHTML;
+
+    // Regex para detectar graus como: 1°, 1°m, 4°7, 5°9, 2°m7 etc.
+    const formatado = texto.replace(/(?<!\w)(\d°m?(?:7|9)?)(?!\w)/g, '<span class="nota">$1</span>');
+
+    pre.innerHTML = formatado;
+  });
+</script>
+</body>
+</html>
