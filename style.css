@@ -13,7 +13,6 @@ body {
 }
 
 header {
-  position: relative;
   background: #111111;
   color: white;
   text-align: center;
@@ -80,7 +79,7 @@ pre {
   display: flex;
   justify-content: center;
   margin: 1.5em 0;
-  
+
 }
 
 #search {
@@ -152,7 +151,7 @@ input#search {
            /* ----------Botão Home------------*/
 
 .home-button {
-    position: absolute; left: 1rem; top: 100px;
+    position: fixed; right: 10px; top: 700px;
     margin-right: 50px;
     display: inline-block; /* Allows setting width, height, and padding */
     padding: 10px 20px; /* Top/bottom padding and left/right padding */
