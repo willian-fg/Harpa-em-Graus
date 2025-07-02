@@ -150,30 +150,25 @@ input#search {
 
            /* ----------Botão Home------------*/
 
-.home-button {
-    position: fixed; right: 15px; top: 430px;
-    margin-right: 50px;
-    display: inline-block; /* Allows setting width, height, and padding */
-    padding: 10px 20px; /* Top/bottom padding and left/right padding */
-    background-color: #4CAF50; /* A pleasant green background */
-    color: white; /* White text color */
-    text-align: center; /* Center the text */
-    text-decoration: none; /* Remove underline from the link */
-    font-size: 16px; /* Adjust font size */
-    border-radius: 8px; /* Slightly rounded corners */
-    border: none; /* Remove default border */
-    cursor: pointer; /* Show a hand cursor on hover */
-    transition: background-color 0.3s ease; /* Smooth transition for background color */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+#back-home {
+  position: fixed;
+  bottom: 150px; /* um pouco acima do botão de scroll */
+  right: 70px;
+  z-index: 999;
 }
 
-.home-button:hover {
-    background-color: #45a049; /* Darker green on hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Slightly larger shadow on hover */
+#home-btn {
+  display: inline-block;
+  background-color: #238307;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s;
 }
 
-.home-button:active {
-    background-color: #3e8e41; /* Even darker green when clicked */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Smaller shadow to simulate pressing */
-    transform: translateY(2px); /* Slight downward movement to simulate pressing */
+#home-btn:hover {
+  background-color: #444;
 }
