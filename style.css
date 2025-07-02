@@ -13,6 +13,7 @@ body {
 }
 
 header {
+  position: relative;
   background: #111111;
   color: white;
   text-align: center;
@@ -79,6 +80,7 @@ pre {
   display: flex;
   justify-content: center;
   margin: 1.5em 0;
+  
 }
 
 #search {
@@ -146,3 +148,33 @@ input#search {
   width: 100px;
 }
 
+
+           /* ----------Botão Home------------*/
+
+.home-button {
+    position: absolute; left: 1rem; top: 100px;
+    margin-right: 50px;
+    display: inline-block; /* Allows setting width, height, and padding */
+    padding: 10px 20px; /* Top/bottom padding and left/right padding */
+    background-color: #4CAF50; /* A pleasant green background */
+    color: white; /* White text color */
+    text-align: center; /* Center the text */
+    text-decoration: none; /* Remove underline from the link */
+    font-size: 16px; /* Adjust font size */
+    border-radius: 8px; /* Slightly rounded corners */
+    border: none; /* Remove default border */
+    cursor: pointer; /* Show a hand cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+.home-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Slightly larger shadow on hover */
+}
+
+.home-button:active {
+    background-color: #3e8e41; /* Even darker green when clicked */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Smaller shadow to simulate pressing */
+    transform: translateY(2px); /* Slight downward movement to simulate pressing */
+}
