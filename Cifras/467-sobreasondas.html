@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="icon" type="image/x-icon" href="../favicon.ico" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>467 - Sobre As Ondas Do Mar </title>
+</head>
+<body>
+  <header>
+    <h1>457 - Sobre As Ondas Do Mar</h1>
+
+
+
+             <!----------Search------------>
+<input
+  type="text"
+  id="search"
+  placeholder="🔍 Buscar música..."
+  onkeydown="buscarCifra(event)"
+  list="sugestoes"
+/>
+<datalist id="sugestoes"></datalist>
+
+  </header>
+
+
+               <!----------Cifra------------>
+  <main>
+   <pre>
+
+    [Intro] 1°  4°  7°  4°  1°
+        7°  4°  1°  5°
+
+[Primeira Parte]
+
+         1°      
+Oh, porque duvidar
+         4° 
+Sobre as ondas do mar
+         1°         6°m      7°   5° 
+Quando Cristo o caminho abriu?
+        1°      
+Quando forçado és
+          4° 
+Contra as ondas lutar
+      1°  6°m     2°m  5°   1° 
+Seu amor a ti quer revelar
+
+[Refrão]
+
+         1° 
+Solta o cabo da nau
+         4° 
+Toma os remos nas mãos
+     1°        6°m      7°  5° 
+E navega com fé em Jesus
+     1°       
+E então, tu verás
+       4° 
+Que bonança se faz
+         1°    6°m    2°m  5°    1° 
+Pois com Ele,    segu__ro serás
+
+[Segunda Parte]
+
+        1°   
+Trevas vêm te assustar
+       4° 
+Tempestades no mar?
+       1°       6°m        7°  5° 
+Da montanha o mestre te vê
+       1°
+E na tribulação
+     4° 
+Ele vem socorrer
+     1°   6°m         2°m  5°     1° 
+Sua mão     bem te po__de suster
+
+[Refrão]
+
+         1° 
+Solta o cabo da nau
+         4° 
+Toma os remos nas mãos
+     1°        6°m      7°  5° 
+E navega com fé em Jesus
+     1° 
+E então, tu verás
+       4° 
+Que bonança se faz
+         1°    6°m    2°m  5°    1° 
+Pois com Ele,    segu__ro serás
+
+( 1°  4°  7°  4°  1° )
+( 7°  4°  1°  5° )
+
+[Terceira Parte]
+
+       1° 
+Podes tu recordar
+     4° 
+Maravilhas sem par?
+      1°        6°m      7°  5° 
+No deserto ao povo fartou
+      1° 
+E o mesmo poder
+     4° 
+Ele sempre terá
+          1°   6°m    2°m  5°    1° 
+Pois não muda    e não falhará
+
+[Refrão]
+
+         1° 
+Solta o cabo da nau
+         4° 
+Toma os remos nas mãos
+     1°        6°m      7°  5° 
+E navega com fé em Jesus
+     1° 
+E então, tu verás
+       4° 
+Que bonança se faz
+         1°    6°m    2°m  5°    1° 
+Pois com Ele,    segu__ro serás
+
+[Quarta Parte]
+
+        1°
+Quando pedes mais fé
+    4° 
+Ele ouve ó crê
+       1°         6°m    7°  5° 
+Mesmo sendo em tribulação
+          1° 
+Quando a mão de poder
+      4° 
+O teu ego tirar
+         1°     6°m    2°m  5°     1° 
+Sobre as ondas    pode__rás andar
+
+[Refrão]
+
+         1° 
+Solta o cabo da nau
+         4° 
+Toma os remos nas mãos
+     1°        6°m      7°  5° 
+E navega com fé em Jesus
+     1° 
+E então, tu verás
+       4° 
+Que bonança se faz
+         1°    6°m    2°m  5°    1°  6°m
+Pois com Ele,    segu__ro serás
+         1°    6°m    2°m  5°    1°  6°m
+Pois com Ele,    segu__ro serás
+         1°    6°m    2°m  5°    1°  
+Pois com Ele,    segu__ro serás
+
+   </pre>
+  </main>
+
+               <!----------home------------>
+
+  <div id="back-home">
+    <a href="../index.html" id="home-btn"><i class="fa-solid fa-house"></i></a>
+  </div>
+
+               <!----------Scroll------------>
+  <div id="scroll-float">
+    <button id="scroll-btn" onclick="toggleScroll()"><i class="fas fa-play"></i></button>
+    <input type="range" id="speed" min="10" max="100" value="30" />
+  </div>
+
+
+
+               <!----------Scripts------------>
+<script src="../cifras.js"></script>
+<!-----Script-Busca*-->
+<script>
+  // Preenche o datalist com os nomes das músicas
+  window.onload = () => {
+    const lista = document.getElementById("sugestoes");
+    cifras.forEach(cifra => {
+      const opt = document.createElement("option");
+      opt.value = cifra.nome;
+      lista.appendChild(opt);
+    });
+  };
+
+  // Redireciona ao pressionar Enter
+function buscarCifra(e) {
+  if (e.key !== "Enter") return;
+  const termo = document.getElementById("search").value.toLowerCase();
+
+  const resultado = cifras.find(c =>
+    c.nome.toLowerCase().includes(termo)
+  );
+
+  if (resultado) {
+    window.location.href = `../Cifras/${resultado.arquivo}`;
+  } else {
+    alert("Música não encontrada.");
+  }
+}
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const input = document.getElementById("search");
+
+  input.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      buscarCifra(event);
+    }
+  });
+});
+</script>
+<!-----Script-Scroll-->
+<script>
+  let scrollInterval = null;
+  let isScrolling = false;
+
+  function toggleScroll() {
+    const btn = document.getElementById("scroll-btn");
+    const speed = parseInt(document.getElementById("speed").value);
+
+    if (!isScrolling) {
+      scrollInterval = setInterval(() => {
+        window.scrollBy({ top: 1, behavior: "smooth" });
+      }, speed);
+      btn.innerHTML = '<i class="fas fa-pause"></i>';
+      isScrolling = true;
+    } else {
+      clearInterval(scrollInterval);
+      btn.innerHTML = '<i class="fas fa-play"></i>';
+      isScrolling = false;
+    }
+  }
+
+  document.getElementById("speed").addEventListener("input", () => {
+    if (isScrolling) {
+      toggleScroll();
+      toggleScroll();
+    }
+  });
+</script>
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const pre = document.querySelector("pre");
+    const texto = pre.innerHTML;
+
+    // Regex para detectar graus como: 1°, 1°m, 4°7, 5°9, 2°m7 etc.
+    const formatado = texto.replace(/(?<!\w)(\d°m?(?:7|9)?)(?!\w)/g, '<span class="nota">$1</span>');
+
+    pre.innerHTML = formatado;
+  });
+</script>
+</body>
+</html>

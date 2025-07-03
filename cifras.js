@@ -8,9 +8,11 @@ const cifras = [
   { nome: "39 - Alvo Mais Que A Neve", arquivo: "39-alvo.html"},
   { nome: "107 - Firme Nas Promessas", arquivo: "107-firmenaspromessas.html"},
   { nome: "115 - Trabalhai E Orai", arquivo: "115-trabalhai.html"},
+  { nome: "151 - Fala Jesus Querido", arquivo: "151-falajesus.html"},
   { nome: "169 - Oh! Jesus Me Ama", arquivo: "169-jesusmeama.html"},
   { nome: "212 - Os Guerreiros Se Preparam", arquivo: "212-osguerreiros.html"},
-  { nome: "151 - Fala Jesus Querido", arquivo: "151-falajesus.html"},
+  { nome: "467 - Sobre As Ondas Do Mar", arquivo: "467-sobreasondas.html"},
+  
   // { nome: "", arquivo: ""},
   
   // Adicione outras cifras aqui
