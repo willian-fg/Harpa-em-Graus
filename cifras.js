@@ -8,6 +8,7 @@ const cifras = [
   { nome: "39 - Alvo Mais Que A Neve", arquivo: "39-alvo.html"},
   { nome: "107 - Firme Nas Promessas", arquivo: "107-firmenaspromessas.html"},
   { nome: "115 - Trabalhai E Orai", arquivo: "115-trabalhai.html"},
+  { nome: "169 - Oh! Jesus Me Ama", arquivo: "169-jesusmeama.html"},
   { nome: "212 - Os Guerreiros Se Preparam", arquivo: "212-osguerreiros.html"}
 
   // { nome: "", arquivo: ""},
