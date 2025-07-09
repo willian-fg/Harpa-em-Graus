@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="icon" type="image/x-icon" href="../favicon.ico" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>000</title>
+</head>
+<body>
+  <header>
+    <h1>000</h1>
+
+
+
+             <!----------Search------------>
+<input
+  type="text"
+  id="search"
+  placeholder="🔍 Buscar música..."
+  onkeydown="buscarCifra(event)"
+  list="sugestoes"
+/>
+<datalist id="sugestoes"></datalist>
+
+  </header>
+
+
+               <!----------Cifra------------>
+  <main>
+   <pre>
+[Intro] 4°  5°  1°  6°m  
+        2°m  5°  1°
+
+[Primeira Parte]
+
+            1°                     6°m
+Se tu, minh'alma, a Deus suplicas
+         2°m    5°7            1°   5°               
+E não recebes,    confiando fica
+       5°      1°                       6°m 
+E em suas promessas que são mui ricas
+       2°m    5°7           1°  b7°  1°7
+E infalíveis    pra te valer
+
+[Refrão]
+
+            4°     5°         3°m
+Porque te abates,   ó minha alma
+6°m         2°m   
+   E te comoves
+5°7             1°    b7° 1°7             
+   Perdendo a calma        
+            4°    5°            3°m         
+Não tenhas medo,   em Deus espera
+6°m             2°m   5°7          1°  5°         
+   Porque bem cedo,    Jesus virá
+
+[Segunda Parte]
+
+          1°                     6°m
+Ele intercede por ti, minh'alma
+         2°m   5°7           1°    5°
+Espera n'Ele,    com fé e calma
+   5°      1°                     6°m     
+Jesus de todos teus males salva
+          2°m  5°7            1°   b7° 1°7
+E te abençoa     dos altos céus
+
+[Refrão]
+
+            4°     5°         3°m
+Porque te abates,   ó minha alma
+6°m         2°m    
+   E te comoves
+5°7             1°    b7° 1°7             
+   Perdendo a calma        
+            4°    5°            3°m         
+Não tenhas medo,   em Deus espera
+6°m             2°m   5°7          1°  b7° 1°7         
+   Porque bem cedo,    Jesus virá
+
+[Solo] 4°  5°  3°m  6°m
+       2°m  5°7  1°  5°7    
+
+[Terceira Parte]
+
+           1°                    6°m
+Terás em breve, as dores findas
+         2°m   5°7         1°    5°
+No dia alegre    da Sua vinda
+     5°     1°                  6°m
+Se Cristo tarda, espera ainda
+             2°m   5°7        1°  b7° 1°7 
+Mais um pouquinho    e O verás
+
+[Refrão]
+
+            4°     5°         3°m
+Porque te abates,   ó minha alma
+6°m         2°m    
+    E te comoves
+5°7             1°    b7° 1°7             
+   Perdendo a calma        
+            4°    5°            3°m         
+Não tenhas medo,   em Deus espera
+6°m             2°m   5°7          4°         
+   Porque bem cedo,    Jesus virá
+
+[Final] 4°m  1°
+
+   </pre>
+  </main>
+
+               <!----------home------------>
+
+  <div id="back-home">
+    <a href="../index.html" id="home-btn"><i class="fa-solid fa-house"></i></a>
+  </div>
+
+               <!----------Scroll------------>
+  <div id="scroll-float">
+    <button id="scroll-btn" onclick="toggleScroll()"><i class="fas fa-play"></i></button>
+    <input type="range" id="speed" min="10" max="100" value="30" />
+  </div>
+
+
+
+               <!----------Scripts------------>
+<script src="../cifras.js"></script>
+<!-----Script-Busca*-->
+<script>
+  // Preenche o datalist com os nomes das músicas
+  window.onload = () => {
+    const lista = document.getElementById("sugestoes");
+    cifras.forEach(cifra => {
+      const opt = document.createElement("option");
+      opt.value = cifra.nome;
+      lista.appendChild(opt);
+    });
+  };
+
+  // Redireciona ao pressionar Enter
+function buscarCifra(e) {
+  if (e.key !== "Enter") return;
+  const termo = document.getElementById("search").value.toLowerCase();
+
+  const resultado = cifras.find(c =>
+    c.nome.toLowerCase().includes(termo)
+  );
+
+  if (resultado) {
+    window.location.href = `../Cifras/${resultado.arquivo}`;
+  } else {
+    alert("Música não encontrada.");
+  }
+}
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const input = document.getElementById("search");
+
+  input.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      buscarCifra(event);
+    }
+  });
+});
+</script>
+<!-----Script-Scroll-->
+<script>
+  let scrollInterval = null;
+  let isScrolling = false;
+
+  function toggleScroll() {
+    const btn = document.getElementById("scroll-btn");
+    const speed = parseInt(document.getElementById("speed").value);
+
+    if (!isScrolling) {
+      scrollInterval = setInterval(() => {
+        window.scrollBy({ top: 1, behavior: "smooth" });
+      }, speed);
+      btn.innerHTML = '<i class="fas fa-pause"></i>';
+      isScrolling = true;
+    } else {
+      clearInterval(scrollInterval);
+      btn.innerHTML = '<i class="fas fa-play"></i>';
+      isScrolling = false;
+    }
+  }
+
+  document.getElementById("speed").addEventListener("input", () => {
+    if (isScrolling) {
+      toggleScroll();
+      toggleScroll();
+    }
+  });
+</script>
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const pre = document.querySelector("pre");
+    const texto = pre.innerHTML;
+
+    // Regex para detectar graus como: 1°, 1°m, 4°7, 5°9, 2°m7 etc.
+    const formatado = texto.replace(/(?<!\w)(\d°m?(?:7|9)?)(?!\w)/g, '<span class="nota">$1</span>');
+
+    pre.innerHTML = formatado;
+  });
+</script>
+</body>
+</html>

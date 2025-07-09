@@ -11,6 +11,7 @@ const cifras = [
   { nome: "151 - Fala Jesus Querido", arquivo: "151-falajesus.html"},
   { nome: "169 - Oh! Jesus Me Ama", arquivo: "169-jesusmeama.html"},
   { nome: "186 - De Valor Em Valor", arquivo: "186-devaloremvalor"},
+  { nome: "193 - A Alma Abatida", arquivo: "193-almaabatida.html"},
   { nome: "212 - Os Guerreiros Se Preparam", arquivo: "212-osguerreiros.html"},
   { nome: "304 - A Face Adorada De Jesus", arquivo: "304-afaceadorada.html"},
   { nome: "467 - Sobre As Ondas Do Mar", arquivo: "467-sobreasondas.html"},
