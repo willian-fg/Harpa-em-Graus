@@ -15,6 +15,7 @@ const cifras = [
   { nome: "193 - A Alma Abatida", arquivo: "193-almaabatida.html"},
   { nome: "210 - Fala Fala Senhor", arquivo: "201-falafalasenhor.html"},
   { nome: "212 - Os Guerreiros Se Preparam", arquivo: "212-osguerreiros.html"},
+  { nome: "224 - É Tempo De Segar", arquivo: "224-etempodesegar.html"},
   { nome: "304 - A Face Adorada De Jesus", arquivo: "304-afaceadorada.html"},
   { nome: "467 - Sobre As Ondas Do Mar", arquivo: "467-sobreasondas.html"},
   
