@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="icon" type="image/x-icon" href="../favicon.ico" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>243 - Ao Abrir o Culto</title>
+</head>
+<body>
+  <header>
+    <h1>243 - Ao Abrir O Culto</h1>
+
+
+
+             <!----------Search------------>
+<input
+  type="text"
+  id="search"
+  placeholder="🔍 Buscar música..."
+  onkeydown="buscarCifra(event)"
+  list="sugestoes"
+/>
+<datalist id="sugestoes"></datalist>
+
+  </header>
+
+
+               <!----------Cifra------------>
+  <main>
+   <pre>
+[Primeira Parte]
+
+       1°
+Nós abrimos este culto
+        5°              1°
+Em Teu nome, ó Jesus Cristo!
+       1°
+Ao pequeno e ao adulto
+       4°       5°      1°
+Luz divina vem dar por isto
+     6°m           3°
+Gozaremos em Tua face
+      6°m            3°
+Ó Cordeiro ressuscitado!
+       1°
+Com doçura, sim, nos enlaces
+        4°        5°       1°
+P'ra ouvir o que nos for dado
+
+[Segunda Parte]
+
+       1°
+Ó nos manda Tua palavra
+      5°            1°
+Pelo Teu Espírito Santo
+        1°
+Que no peito um fogo lavra
+       4°      5°      1°
+Que enxuga também o pranto
+       6°m               3°
+Nosso pai, nós Te suplicamos
+      6°m              3°
+Nova vida p'ra Tua igreja
+       1°
+Ó não tardes, pois desejamos
+       4°      5°      1°
+Que pureza em nós Tu vejas
+
+[Terceira Parte]
+
+     1°
+Abençoa, ó Deus Santo
+         5°              1°
+Os Teus servos em todo mundo
+     1°
+Abençoa o nosso canto
+      4°       5°   1°
+E dá vida aos moribundos
+     6°m            3°
+Abençoa aos cordeirinhos
+     6°m              3°
+A família dos Teus amados
+     1°
+Como ave que no seu ninho
+          4°        5°    1°
+Tem seus filhos bem abrigados
+
+   </pre>
+  </main>
+
+               <!----------home------------>
+
+  <div id="back-home">
+    <a href="../index.html" id="home-btn"><i class="fa-solid fa-house"></i></a>
+  </div>
+
+               <!----------Scroll------------>
+  <div id="scroll-float">
+    <button id="scroll-btn" onclick="toggleScroll()"><i class="fas fa-play"></i></button>
+    <input type="range" id="speed" min="10" max="100" value="30" />
+  </div>
+
+
+
+               <!----------Scripts------------>
+<script src="../cifras.js"></script>
+<!-----Script-Busca*-->
+<script>
+  // Preenche o datalist com os nomes das músicas
+  window.onload = () => {
+    const lista = document.getElementById("sugestoes");
+    cifras.forEach(cifra => {
+      const opt = document.createElement("option");
+      opt.value = cifra.nome;
+      lista.appendChild(opt);
+    });
+  };
+
+  // Redireciona ao pressionar Enter
+function buscarCifra(e) {
+  if (e.key !== "Enter") return;
+  const termo = document.getElementById("search").value.toLowerCase();
+
+  const resultado = cifras.find(c =>
+    c.nome.toLowerCase().includes(termo)
+  );
+
+  if (resultado) {
+    window.location.href = `../Cifras/${resultado.arquivo}`;
+  } else {
+    alert("Música não encontrada.");
+  }
+}
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const input = document.getElementById("search");
+
+  input.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      buscarCifra(event);
+    }
+  });
+});
+</script>
+<!-----Script-Scroll-->
+<script>
+  let scrollInterval = null;
+  let isScrolling = false;
+
+  function toggleScroll() {
+    const btn = document.getElementById("scroll-btn");
+    const speed = parseInt(document.getElementById("speed").value);
+
+    if (!isScrolling) {
+      scrollInterval = setInterval(() => {
+        window.scrollBy({ top: 1, behavior: "smooth" });
+      }, speed);
+      btn.innerHTML = '<i class="fas fa-pause"></i>';
+      isScrolling = true;
+    } else {
+      clearInterval(scrollInterval);
+      btn.innerHTML = '<i class="fas fa-play"></i>';
+      isScrolling = false;
+    }
+  }
+
+  document.getElementById("speed").addEventListener("input", () => {
+    if (isScrolling) {
+      toggleScroll();
+      toggleScroll();
+    }
+  });
+</script>
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const pre = document.querySelector("pre");
+    const texto = pre.innerHTML;
+
+    // Regex para detectar graus como: 1°, 1°m, 4°7, 5°9, 2°m7 etc.
+    const formatado = texto.replace(/(?<!\w)(\d°m?(?:7|9)?)(?!\w)/g, '<span class="nota">$1</span>');
+
+    pre.innerHTML = formatado;
+  });
+</script>
+</body>
+</html>
