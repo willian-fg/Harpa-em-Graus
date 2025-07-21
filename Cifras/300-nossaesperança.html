@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="icon" type="image/x-icon" href="../favicon.ico" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>000</title>
+</head>
+<body>
+  <header>
+    <h1>000</h1>
+
+
+
+             <!----------Search------------>
+<input
+  type="text"
+  id="search"
+  placeholder="🔍 Buscar música..."
+  onkeydown="buscarCifra(event)"
+  list="sugestoes"
+/>
+<datalist id="sugestoes"></datalist>
+
+  </header>
+
+
+               <!----------Cifra------------>
+  <main>
+   <pre>
+[Primeira Estrofe]
+
+       1°
+Jesus, sim, vem do céu, em glória Ele vem!
+2°m           5°7
+Ecoa a nova pelo mundo além
+   1°          1°7         4°
+Oh esperança que a sua Igreja tem!
+      1°      6°m      2°m7     5°7    1°   4° 1°
+Dai glória a Deus, Jesus em breve vem!
+
+[Refrão]
+
+    5°      1°                                         2°m7
+Nossa esperança é sua vinda o rei dos reis vem nos buscar
+          5°             2°m7             5°         1°    5°
+Nós aguardamos Jesus, ainda,  té a luz da manhã raiar
+           1°                                   1°7      4°
+Nossa esperança é sua vinda o rei dos reis vem nos buscar
+         #4°m7          1°    6°m         2°m    5°7    1°
+Nós aguardamos Jesus, ainda,  té a luz da manhã  raiar
+
+[Segunda Estrofe]
+
+1°
+Jesus, sim, vem, os mortos es esperando estão
+   2°m          5°7
+O gran momento da ressurreição
+  1°                            4°
+E do sepulcro em breve se levantarão!
+      1°       6°m       2°m    5°7      1°  4° 1°
+Dai glória a Deus,  Jesus em breve vem!
+
+[Refrão]
+
+    5°      1°                                         2°m7
+Nossa esperança é sua vinda o rei dos reis vem nos buscar
+          5°             2°m7             5°         1°    5°
+Nós aguardamos Jesus, ainda,  té a luz da manhã raiar
+           1°                                   1°7      4°
+Nossa esperança é sua vinda o rei dos reis vem nos buscar
+         #4°m7          1°    6°m         2°m    5°7    1°
+Nós aguardamos Jesus, ainda,  té a luz da manhã  raiar
+
+[Terceira Estrofe]
+
+ 1°
+Jesus, sim, vem do céu cercado de esplendor
+ 2°m           5°7            1°
+Aniquilando a corrupção e a dor
+    1°               1°7          4°
+Quebrando os laços do astuto usurpador
+      1°       6°m      2°m     5°      1° 4° 1°
+Dai glória a Deus, Jesus em breve vem!
+
+[Refrão]
+
+    5°      1°                                         2°m7
+Nossa esperança é sua vinda o rei dos reis vem nos buscar
+          5°             2°m7             5°         1°    5°
+Nós aguardamos Jesus, ainda,  té a luz da manhã raiar
+           1°                                   1°7      4°
+Nossa esperança é sua vinda o rei dos reis vem nos buscar
+         #4°m7          1°    6°m         2°m    5°7    1°
+Nós aguardamos Jesus, ainda,  té a luz da manhã  raiar
+
+[Quarta Estrofe]
+
+1°
+Jesus, sim, vem, completamente restaurar
+  2°m             5°7           1°
+O mundo que se arruína sem parar
+        1°             1°7             4°
+Sim, todas as coisas vem depressa transformar
+      1°       6°m      2°m     5°      1° 4° 1°
+Dai glória a Deus, Jesus em breve vem!
+
+[Refrão]
+
+    5°      1°                                         2°m7
+Nossa esperança é sua vinda o rei dos reis vem nos buscar
+          5°             2°m7             5°         1°    5°
+Nós aguardamos Jesus, ainda,  té a luz da manhã raiar
+           1°                                   1°7      4°
+Nossa esperança é sua vinda o rei dos reis vem nos buscar
+         #4°m7          1°    6°m         2°m    5°7    1°
+Nós aguardamos Jesus, ainda,  té a luz da manhã  raiar
+
+[Quinta Estrofe]
+
+1°
+  Jesus, sim, vem, e sempiterna adoração
+ 2°m            5°7          1°
+Daremos nós ao rei de coração
+    1°               1°7           4°
+Ao grande autor da nossa eterna salvação
+      1°       6°m      2°m    5°       1° 4° 1°
+Dai glória a Deus, Jesus em breve vem!
+
+[Refrão]
+
+   5°      1°                                         2°m7
+Nossa esperança é sua vinda o rei dos reis vem nos buscar
+          5°             2°m7             5°         1°    5°
+Nós aguardamos Jesus, ainda,  té a luz da manhã raiar
+           1°                                   1°7      4°
+Nossa esperança é sua vinda o rei dos reis vem nos buscar
+         #4°m7          1°    6°m          2°m    5°7    1°
+Nós aguardamos Jesus, ainda,  té a luz da manhã  raiar
+
+   </pre>
+  </main>
+
+               <!----------home------------>
+
+  <div id="back-home">
+    <a href="../index.html" id="home-btn"><i class="fa-solid fa-house"></i></a>
+  </div>
+
+               <!----------Scroll------------>
+  <div id="scroll-float">
+    <button id="scroll-btn" onclick="toggleScroll()"><i class="fas fa-play"></i></button>
+    <input type="range" id="speed" min="10" max="100" value="30" />
+  </div>
+
+
+
+               <!----------Scripts------------>
+<script src="../cifras.js"></script>
+<!-----Script-Busca*-->
+<script>
+  // Preenche o datalist com os nomes das músicas
+  window.onload = () => {
+    const lista = document.getElementById("sugestoes");
+    cifras.forEach(cifra => {
+      const opt = document.createElement("option");
+      opt.value = cifra.nome;
+      lista.appendChild(opt);
+    });
+  };
+
+  // Redireciona ao pressionar Enter
+function buscarCifra(e) {
+  if (e.key !== "Enter") return;
+  const termo = document.getElementById("search").value.toLowerCase();
+
+  const resultado = cifras.find(c =>
+    c.nome.toLowerCase().includes(termo)
+  );
+
+  if (resultado) {
+    window.location.href = `../Cifras/${resultado.arquivo}`;
+  } else {
+    alert("Música não encontrada.");
+  }
+}
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const input = document.getElementById("search");
+
+  input.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      buscarCifra(event);
+    }
+  });
+});
+</script>
+<!-----Script-Scroll-->
+<script>
+  let scrollInterval = null;
+  let isScrolling = false;
+
+  function toggleScroll() {
+    const btn = document.getElementById("scroll-btn");
+    const speed = parseInt(document.getElementById("speed").value);
+
+    if (!isScrolling) {
+      scrollInterval = setInterval(() => {
+        window.scrollBy({ top: 1, behavior: "smooth" });
+      }, speed);
+      btn.innerHTML = '<i class="fas fa-pause"></i>';
+      isScrolling = true;
+    } else {
+      clearInterval(scrollInterval);
+      btn.innerHTML = '<i class="fas fa-play"></i>';
+      isScrolling = false;
+    }
+  }
+
+  document.getElementById("speed").addEventListener("input", () => {
+    if (isScrolling) {
+      toggleScroll();
+      toggleScroll();
+    }
+  });
+</script>
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const pre = document.querySelector("pre");
+    const texto = pre.innerHTML;
+
+    // Regex para detectar graus como: 1°, 1°m, 4°7, 5°9, 2°m7 etc.
+    const formatado = texto.replace(/(?<!\w)(\d°m?(?:7|9)?)(?!\w)/g, '<span class="nota">$1</span>');
+
+    pre.innerHTML = formatado;
+  });
+</script>
+</body>
+</html>
