@@ -24,6 +24,7 @@ const cifras = [
   { nome: "305 - Campeões Da Luz", arquivo: "305-campeoesdaluz.html"},
   { nome: "442 - Breve Verei O Bom Jesus", arquivo: "442-breveverei.html"},
   { nome: "467 - Sobre As Ondas Do Mar", arquivo: "467-sobreasondas.html"},
+  { nome: "525 - Vencendo Vem Jesus", arquivo: "525-vencendovemjesus.html"},
   
   // { nome: "", arquivo: ""},
   
