@@ -22,6 +22,7 @@ const cifras = [
   { nome: "301 - Vem Cear", arquivo: "301-vemcear.html"},
   { nome: "304 - A Face Adorada De Jesus", arquivo: "304-afaceadorada.html"},
   { nome: "305 - Campeões Da Luz", arquivo: "305-campeoesdaluz.html"},
+  { nome: "442 - Breve Verei O Bom Jesus", arquivo: "442-breveverei.html"},
   { nome: "467 - Sobre As Ondas Do Mar", arquivo: "467-sobreasondas.html"},
   
   // { nome: "", arquivo: ""},
