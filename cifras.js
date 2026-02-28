@@ -12,6 +12,7 @@ const cifras = [
   { nome: "151 - Fala Jesus Querido", arquivo: "151-falajesus.html"},
   { nome: "169 - Oh! Jesus Me Ama", arquivo: "169-jesusmeama.html"},
   { nome: "186 - De Valor Em Valor", arquivo: "186-devaloremvalor"},
+  { nome: "187 - Mais Perto Quero Estar", arquivo: "187-maisperto.html"}
   { nome: "193 - A Alma Abatida", arquivo: "193-almaabatida.html"},
   { nome: "210 - Fala Fala Senhor", arquivo: "201-falafalasenhor.html"},
   { nome: "212 - Os Guerreiros Se Preparam", arquivo: "212-osguerreiros.html"},
@@ -25,7 +26,6 @@ const cifras = [
   { nome: "442 - Breve Verei O Bom Jesus", arquivo: "442-breveverei.html"},
   { nome: "467 - Sobre As Ondas Do Mar", arquivo: "467-sobreasondas.html"},
   { nome: "525 - Vencendo Vem Jesus", arquivo: "525-vencendovemjesus.html"},
-  
   // { nome: "", arquivo: ""},
   
   // Adicione outras cifras aqui
