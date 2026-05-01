@@ -6,6 +6,8 @@ const cifras = [
   { nome: "15 - Conversão", arquivo: "15-conversão.html"},
   { nome: "36 - O Exilado", arquivo: "36-oexilado.html"},
   { nome: "39 - Alvo Mais Que A Neve", arquivo: "39-alvo.html"},
+  { nome: "88 - Revela Nós Senhor", arquivo: "88-revelanossenhor.html"},
+  { nome: "89 - Sublime e Grande Amor", arquivo: "89-sublimeegrandeamor.html"},
   { nome: "107 - Firme Nas Promessas", arquivo: "107-firmenaspromessas.html"},
   { nome: "115 - Trabalhai E Orai", arquivo: "115-trabalhai.html"},
   { nome: "127 - O Senhor Da Ceifa Chama", arquivo: "127-osenhordaceifachama.html"},
