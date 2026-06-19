@@ -11,7 +11,7 @@ const cifras = [
   { nome: "89 - Sublime e Grande Amor", arquivo: "089-sublimeegrandeamor.html" },
   { nome: "107 - Firme Nas Promessas", arquivo: "107-firmenaspromessas.html" },
   { nome: "115 - Trabalhai E Orai", arquivo: "115-trabalhai.html" },
-  { nome: "127 - O Senhor Da Ceifa Chama", arquivo: "127-osenhordaceifachama.html" },
+  { nome: "127 - O Senhor e Da Ceifa Chama", arquivo: "127-osenhordaceifachama.html" },
   { nome: "151 - Fala Jesus Querido", arquivo: "151-falajesus.html" },
   { nome: "169 - Oh! Jesus Me Ama", arquivo: "169-jesusmeama.html" },
   { nome: "186 - De Valor Em Valor", arquivo: "186-devaloremvalor" },
