@@ -29,8 +29,8 @@ const cifras = [
   { nome: "442 - Breve Verei O Bom Jesus", arquivo: "442-breveverei.html" },
   { nome: "467 - Sobre As Ondas Do Mar", arquivo: "467-sobreasondas.html" },
   { nome: "525 - Vencendo Vem Jesus", arquivo: "525-vencendovemjesus.html" },
+  { nome: "547 - O Rei Está Voltando", arquivo: "547-oreiestavoltando.html" },
   { nome: "570 - A Última Hora", arquivo: "570-aultimahora.html" },
-
   // { nome: "", arquivo: ""},
 
   // Adicione outras cifras aqui

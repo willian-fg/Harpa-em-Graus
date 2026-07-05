@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="icon" type="image/x-icon" href="../favicon.ico" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>547 - O Rei Está Voltando</title>
+</head>
+
+<body>
+  <header>
+    <h1>547 - O Rei Está Voltando </h1>
+
+
+
+    <!----------Search------------>
+    <input type="text" id="search" placeholder="🔍 Buscar música..." onkeydown="buscarCifra(event)" list="sugestoes" />
+    <datalist id="sugestoes"></datalist>
+
+  </header>
+
+
+  <!----------Cifra------------>
+  <main>
+    <pre>
+[Intro]
+1° 1°7 4° 1°
+4° 1°/3 2°m 1°
+
+[Primeira Parte]
+
+       1°          1°7
+O mercado está vazio
+
+       4°          2°m
+Seu trabalho já parou
+
+       5°          5°/7
+Do martelo dos obreiros
+
+    1°     4°     1°
+O barulho já cessou
+
+7°dim  1°           1°7
+O ceifeiros lá no campo
+
+      4°          2°m
+Terminaram seu labor
+
+      5°               5°/7
+Toda terra está em suspense
+
+    1°     4°     1°
+É a volta do Senhor
+
+[Refrão]
+
+   1°          1°7
+O rei está voltando
+
+   4°          2°m
+O rei está voltando
+
+       5°         5°/7
+A trombeta está soando
+
+       1°  4°     1°
+O meu nome a chamar
+
+   1°          1°7
+O rei está voltando
+
+   4°          2°m
+O rei está voltando
+
+    5°       4°   1°/3  2°m  1°
+Aleluia Ele vem me   bus_car
+
+[Segunda Parte]
+
+      1°             1°7
+Os vagões de trem vazios
+
+       4°             2°m
+Passam ruas e quarteirões
+
+   5°               5°/7
+Aviões sem seus pilotos
+
+       1°      4°  1°
+Voam pra destruição
+
+7°dim  1°            1°7
+As cidades estão desertas
+
+      4°         2°m
+Sua agitação parou
+
+      5°         5°/7
+Sai a última notícia
+
+       1°     4°     1°
+Jesus Cristo já voltou
+
+[Refrão]
+
+   1°          1°7
+O rei está voltando
+
+   4°          2°m
+O rei está voltando
+
+       5°         5°/7
+A trombeta está soando
+
+       1°  4°     1°
+O meu nome a chamar
+
+   1°          1°7
+O rei está voltando
+
+   4°          2°m
+O rei está voltando
+
+    5°       4°   1°/3  2°m  1°
+Aleluia Ele vem me   bus_car
+
+[Terceira Parte] (Modulação para G#)
+
+        1°         1°7
+Vejo a multidão subindo
+
+      4°         2°m
+Ouço coro angelical
+
+      5°           5°/7
+Todo céu está se abrindo
+
+          1°     4°    1°
+Num "bem vindo" sem igual
+
+7°dim  1°           1°7
+Como som de muitas águas
+
+       4°      2°m
+Nós ouvimos ecoar
+
+      5°       5°/7
+Aleluias ao cordeiro
+
+          1°  4°     1°
+Nos voltamos para o lar
+
+[Refrão]
+
+   1°         1°7 
+O rei está voltando
+
+   4°         2°m
+O rei está voltando
+
+       5°         5°/7
+A trombeta está soando
+
+       1°  4°     1°
+O meu nome a chamar
+
+   1°         1°7
+O rei está voltando
+
+   4°         2°m
+O rei está voltando
+
+    5°      4°   1°/3  2°m  1°
+Aleluia Ele vem me     bus__car
+    </pre>
+  </main>
+
+  <!----------home------------>
+
+  <div id="back-home">
+    <a href="../index.html" id="home-btn"><i class="fa-solid fa-house"></i></a>
+  </div>
+
+  <!----------Scroll------------>
+  <div id="scroll-float">
+    <button id="scroll-btn" onclick="toggleScroll()"><i class="fas fa-play"></i></button>
+    <input type="range" id="speed" min="10" max="100" value="30" />
+  </div>
+
+
+
+  <!----------Scripts------------>
+  <script src="../cifras.js"></script>
+  <!-----Script-Busca*-->
+  <script>
+    // Preenche o datalist com os nomes das músicas
+    window.onload = () => {
+      const lista = document.getElementById("sugestoes");
+      cifras.forEach(cifra => {
+        const opt = document.createElement("option");
+        opt.value = cifra.nome;
+        lista.appendChild(opt);
+      });
+    };
+
+    // Redireciona ao pressionar Enter
+    function buscarCifra(e) {
+      if (e.key !== "Enter") return;
+      const termo = document.getElementById("search").value.toLowerCase();
+
+      const resultado = cifras.find(c =>
+        c.nome.toLowerCase().includes(termo)
+      );
+
+      if (resultado) {
+        window.location.href = `../Cifras/${resultado.arquivo}`;
+      } else {
+        alert("Música não encontrada.");
+      }
+    }
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const input = document.getElementById("search");
+
+      input.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+          buscarCifra(event);
+        }
+      });
+    });
+  </script>
+  <!-----Script-Scroll-->
+  <script>
+    let scrollInterval = null;
+    let isScrolling = false;
+
+    function toggleScroll() {
+      const btn = document.getElementById("scroll-btn");
+      const speed = parseInt(document.getElementById("speed").value);
+
+      if (!isScrolling) {
+        scrollInterval = setInterval(() => {
+          window.scrollBy({top: 1, behavior: "smooth"});
+        }, speed);
+        btn.innerHTML = '<i class="fas fa-pause"></i>';
+        isScrolling = true;
+      } else {
+        clearInterval(scrollInterval);
+        btn.innerHTML = '<i class="fas fa-play"></i>';
+        isScrolling = false;
+      }
+    }
+
+    document.getElementById("speed").addEventListener("input", () => {
+      if (isScrolling) {
+        toggleScroll();
+        toggleScroll();
+      }
+    });
+  </script>
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      const pre = document.querySelector("pre");
+      const texto = pre.innerHTML;
+
+      // Regex para detectar graus como: 1°, 1°m, 4°7, 5°9, 2°m7 etc.
+      const formatado = texto.replace(/(?<!\w)(\d°m?(?:7|9)?)(?!\w)/g, '<span class="nota">$1</span>');
+
+      pre.innerHTML = formatado;
+    });
+  </script>
+</body>
+
+</html>
