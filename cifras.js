@@ -20,6 +20,7 @@ const cifras = [
   { nome: "210 - Fala Fala Senhor", arquivo: "201-falafalasenhor.html" },
   { nome: "212 - Os Guerreiros Se Preparam", arquivo: "212-osguerreiros.html" },
   { nome: "224 - É Tempo De Segar", arquivo: "224-etempodesegar.html" },
+  { nome: "225 - Sê Valente", arquivo: "225-sevalente.html"},
   { nome: "243 - Ao Abrir O Culto", arquivo: "224-aoabriroculto.html" },
   { nome: "243 - Ao Abrir O Culto", arquivo: "291-rudecruz.html" },
   { nome: "300 - Nossa Esperança", arquivo: "300-nossaesperança" },
