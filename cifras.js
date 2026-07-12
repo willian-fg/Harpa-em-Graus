@@ -3,6 +3,7 @@ const cifras = [
   { nome: "2 - Saudosa Lembrança", arquivo: "002-saudosa.html" },
   { nome: "3 - Plena Paz", arquivo: "003-plena.html" },
   { nome: "4 - Deus Velará Por Ti", arquivo: "004-deusvelaraporti.html"},
+  { nome: "Ó Desce Fogo Santo", arquivo: "005-odescefogosanto.html"},
   { nome: "8 - Cristo, O Fiel Amigo", arquivo: "008-ofielamigo.html" },
   { nome: "15 - Conversão", arquivo: "015-conversão.html" },
   { nome: "36 - O Exilado", arquivo: "036-oexilado.html" },
