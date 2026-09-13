@@ -21,6 +21,7 @@ const cifras = [
   { nome: "186 - De Valor Em Valor", arquivo: "186-devaloremvalor" },
   { nome: "187 - Mais Perto Quero Estar", arquivo: "187-maisperto.html" },
   { nome: "193 - A Alma Abatida", arquivo: "193-almaabatida.html" },
+  { nome: "198 - Jesus o Bom Amigo", arquivo:"198-jesusobomamigo.html"},
   { nome: "210 - Fala Fala Senhor", arquivo: "201-falafalasenhor.html" },
   { nome: "212 - Os Guerreiros Se Preparam", arquivo: "212-osguerreiros.html" },
   { nome: "224 - É Tempo De Segar", arquivo: "224-etempodesegar.html" },
