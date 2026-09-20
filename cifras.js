@@ -36,6 +36,7 @@ const cifras = [
   { nome: "422 - No Céu Não Entra Pecado", arquivo: "422-noceunaoentrapecado.html"},
   { nome: "442 - Breve Verei O Bom Jesus", arquivo: "442-breveverei.html" },
   { nome: "467 - Sobre As Ondas Do Mar", arquivo: "467-sobreasondas.html" },
+  { nome: "469 - Ao Estrugir Da Trombeta", arquivo: "469-aoestrugirdatrombeta.html"},
   { nome: "525 - Vencendo Vem Jesus", arquivo: "525-vencendovemjesus.html" },
   { nome: "526 - Grandioso És Tu", arquivo: "526-grandiosoestu.html"},
   { nome: "545 - Porque Ele Vive", arquivo: "545-porqueelevive.html" },
